@@ -1,157 +1,252 @@
-# 🌱 agro-e — Inteligência Agrícola Autônoma
+<div align="center">
 
-> **Sistema de monitoramento autônomo de riscos e oportunidades no agronegócio brasileiro.**  
-> Em operação real. Não é um protótipo de demonstração — é um produto.
+<img src="https://img.shields.io/badge/Status-Em%20Produção%20Real-1a472a?style=for-the-badge&logo=checkmarx&logoColor=white"/>
+<img src="https://img.shields.io/badge/Versão-1.0-f0a500?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/n8n-6%20Workflows-ea4b71?style=for-the-badge&logo=n8n&logoColor=white"/>
+<img src="https://img.shields.io/badge/LLM-GPT--4.1--mini-412991?style=for-the-badge&logo=openai&logoColor=white"/>
+<img src="https://img.shields.io/badge/LGPD-Compliant-0ea5e9?style=for-the-badge"/>
+
+<br/><br/>
+
+# 🌱 agro-e
+## Inteligência Agrícola Autônoma
+
+**Sistema multi-agente de IA que monitora operações agrícolas, identifica riscos documentais, climáticos e cambiais, e descobre oportunidades comerciais — sem depender de input humano.**
+
+> ⚠️ **Este não é um protótipo criado para demonstração.**  
+> É uma solução completa em operação real, com WhatsApp respondendo, banco de dados populado e relatórios sendo enviados automaticamente por email às 9h de cada dia.
+
+<br/>
+
+[📊 Ver Evidências](https://github.com/airionntelligentsystems/Agro-e/tree/main/docs/evidencias) • [📄 Proposta Técnica](https://github.com/airionntelligentsystems/Agro-e/blob/main/docs/proposta/agroe-documentacao-tecnica-comercial.html) • [🏗️ Arquitetura](https://github.com/airionntelligentsystems/Agro-e/blob/main/docs/arquitetura/context-engineering.md) • [📋 Schema BD](https://github.com/airionntelligentsystems/Agro-e/blob/main/data/schema.md)
+
+</div>
 
 ---
 
-## O que é
+## ✅ Evidências de Produção
 
-O agro-e é uma plataforma de IA multi-agente que opera como um analista sênior digital, 24h por dia, monitorando operações agrícolas, identificando riscos documentais, climáticos e cambiais, e descobrindo oportunidades comerciais — sem depender de input humano.
-
-**Resultado do monitoramento diário das 8h:**
-- Quais operações estão com documentação em risco e por quê
-- Qual o impacto da variação cambial em cada produtor
-- Quais clientes devem ser acionados agora com oferta específica
-- Quais regiões têm oportunidade de expansão frente à concorrência
+| Evidência | Status | Detalhe |
+|-----------|--------|---------|
+| WhatsApp respondendo mensagens reais | ✅ Confirmado | Mensagem real recebida e respondida em produção |
+| Execuções n8n com sucesso | ✅ IDs: 27187, 27188, 27189, 27192 | Múltiplas execuções registradas |
+| Relatório de gestão por email | ✅ Recebido e aprovado | *"ficou excelente, altíssimo nível"* |
+| Memória conversacional acumulada | ✅ 28 mensagens no banco | PostgreSQL agroe_chat_memory |
+| Webhook CRM respondendo | ✅ HTTP 200 OK em 930ms | POST /agroe-crm-entrada testado |
+| 15 tabelas no banco de dados | ✅ Em produção | Supabase Arion us-east-1 |
+| 6 workflows ativos | ✅ Todos ativos | n8n self-hosted em produção |
 
 ---
 
-## Arquitetura
+## 🏗️ Arquitetura do Sistema
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│              WF01 — ENTRADA + MONITOR PROATIVO (133 nós)            │
+│  REATIVO:  WhatsApp → Evolution API → Normalizador → Redis → WF02  │
+│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02               │
+│            └─ PostgreSQL · Supabase · Open-Meteo GPS · AwesomeAPI   │
+└─────────────────────────────┬───────────────────────────────────────┘
+                              │
+┌─────────────────────────────▼───────────────────────────────────────┐
+│              WF02 — CONSOLE MULTI-AGENTES (31 nós)                  │
+│                                                                      │
+│  🤖 Agente Roteador (GPT-4.1-mini · Postgres Chat Memory)           │
+│  ├── 🤔 Think Tool × 2  (raciocínio explícito anti-alucinação)      │
+│  ├── 📄 agente_analista_documental    → score 0-40pts               │
+│  ├── 🌤️ agente_monitor_climatico      → Open-Meteo por GPS          │
+│  ├── 💱 agente_analista_cambio        → AwesomeAPI USD/BRL           │
+│  ├── 📊 agente_monitoramento_proativo → score composto 0-100         │
+│  ├── 💼 agente_inteligencia_comercial → 4 tipos de oportunidade ★   │
+│  ├── 📅 Google Calendar × 3 tools    → alertas automáticos          │
+│  └── 🆘 encaminhar_responsavel_humano → WF03                         │
+└────┬──────────────────┬──────────────────┬──────────────────────────┘
+     │                  │                  │
+┌────▼────┐      ┌──────▼──────┐    ┌──────▼──────┐    ┌─────────────┐
+│  WF03   │      │    WF04     │    │    WF05     │    │    WF06     │
+│ Escalada│      │ Vencimentos │    │  Relatório  │    │  CRM/ERP    │
+│ Humano  │      │ 7h e 12h   │    │  9h diário  │    │  Universal  │
+│ 13 nós  │      │  48 nós    │    │   8 nós     │    │  11 nós     │
+└─────────┘      └─────────────┘    └─────────────┘    └─────────────┘
+```
+
+---
+
+## 🖼️ Workflows em Produção
+
+### WF01 — Entrada WhatsApp + Monitor Proativo (133 nós)
+![WF01](docs/prints/wf01-entrada-monitor-proativo.svg)
+
+---
+
+### WF02 — Console Multi-Agentes (31 nós)
+![WF02](docs/prints/wf02-console-multiagentes.svg)
+
+---
+
+### WF03 — Escalada para Responsável Humano (13 nós)
+![WF03](docs/prints/wf03-escalada-humano.svg)
+
+---
+
+### WF04 — Monitor de Vencimentos Documentais (48 nós)
+![WF04](docs/prints/wf04-monitor-vencimentos.svg)
+
+---
+
+### WF05 — Relatório de Gestão — Email HTML + WhatsApp (8 nós)
+![WF05](docs/prints/wf05-relatorio-gestao.svg)
+
+---
+
+### WF06 — Integração CRM/ERP — Adaptador Universal (11 nós)
+![WF06](docs/prints/wf06-integracao-crm-erp.svg)
+
+---
+
+## 🧠 Técnicas Implementadas
+
+| # | Técnica | Como foi implementada | Nível |
+|---|---------|----------------------|-------|
+| 1 | **Prompt Engineering** | 7 system prompts distintos: papel, objetivo, escopo, formato, anti-hallucination e anti-injection por agente | ⭐⭐⭐ Avançado |
+| 2 | **Context Engineering** | 3 camadas: Redis TTL 1h + PostgreSQL 90d + Supabase permanente. Recuperação antes de cada análise | ⭐⭐⭐ Avançado |
+| 3 | **RAG / Recuperação** | PostgreSQL filtrado + Supabase por telefone + Open-Meteo por GPS + AwesomeAPI em tempo real | ⭐⭐⭐ Avançado |
+| 4 | **Dados Estruturados** | 15 tabelas com constraints CHECK, foreign keys, índices, views materializadas e funções SQL | ⭐⭐⭐ Avançado |
+| 5 | **API Externa Real** | Open-Meteo (clima por GPS, previsão 5 dias) + AwesomeAPI/BCB (USD/BRL). Zero custo. | ⭐⭐⭐ Avançado |
+| 6 | **Orquestração Autônoma** | Schedule 8h seg-sáb: executa sem input humano. Agente decide subagentes e canais sozinho. | ⭐⭐⭐ Avançado |
+| 7 | **Ferramentas/Workflows** | 6 workflows interligados. 10 tools no Roteador: Think×2, 5 subagentes, 3 Calendar, 1 escalada | ⭐⭐⭐ Avançado |
+| 8 | **Classificação de Risco** | Score composto 0-100 com 5 fatores ponderados. 4 tipos de oportunidade comercial com ROI estimado | ⭐⭐⭐ Avançado |
+| 9 | **Resposta Estruturada** | JSON com alertas + Email HTML + WhatsApp formatado + Google Calendar automático | ⭐⭐⭐ Avançado |
+| 10 | **Logs / Rastreabilidade** | 4 tabelas de audit trail: historico_execucoes, relatorios_gestao, gestao_historico, lgpd_acesso_log | ⭐⭐⭐ Avançado |
+| 11 | **Tratamento de Erros** | continueOnFail em todos os nós HTTP + Sanitizador de resposta (anti-JSON Schema leak) | ⭐⭐⭐ Avançado |
+| 12 | **Segurança / Anti-Injection** | Anti-injection nos 7 prompts + Tags XML dados vs instrução + RLS Supabase + $vars para secrets | ⭐⭐⭐ Avançado |
+
+---
+
+## 📊 Score de Risco Composto
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
-║  WF01 — ENTRADA + MONITOR PROATIVO (133 nós)                ║
-║  ├── Reativo: WhatsApp → Normalizador → Redis → WF02        ║
-║  └── Proativo: Schedule 8h → 7 fontes de dados → WF02       ║
-╚══════════════════════════════════╦═══════════════════════════╝
-                                   ║
-╔══════════════════════════════════╩═══════════════════════════╗
-║  WF02 — CONSOLE MULTI-AGENTES (31 nós)                      ║
-║  ├── Agente Roteador (GPT-4.1-mini)                         ║
-║  ├── Think Tool × 2 (raciocínio explícito)                  ║
-║  ├── agente_analista_documental                             ║
-║  ├── agente_monitor_climatico                               ║
-║  ├── agente_analista_mercado_cambio                         ║
-║  ├── agente_monitoramento_proativo                          ║
-║  ├── agente_inteligencia_comercial ← diferencial            ║
-║  ├── Google Calendar (3 tools)                              ║
-║  ├── Postgres Chat Memory                                   ║
-║  └── encaminhar_para_responsavel_humano → WF03              ║
-╚══════════════════════════════════╦═══════════════════════════╝
-            ┌──────────────────────┴──────────────────────┐
-╔═══════════╩══════════════╗  ╔══════════════════╗  ╔═════╩════════════════════╗
-║ WF03 — ESCALADA (13 nós) ║  ║ WF04 — VENCIM.  ║  ║ WF05 — GESTÃO (8 nós)   ║
-║ Pausa IA · Notifica      ║  ║ 7h e 12h diários ║  ║ Email HTML + WhatsApp   ║
-║ responsável via WA       ║  ║ Docs vencendo    ║  ║ Relatório rastreável    ║
-╚══════════════════════════╝  ╚══════════════════╝  ╚══════════════════════════╝
-
-╔══════════════════════════════════════════════════════════════╗
-║  WF06 — INTEGRAÇÃO CRM/ERP — ADAPTADOR UNIVERSAL (11 nós)  ║
-║  Salesforce · HubSpot · Siagri · TOTVS · AgroSmart · Custom ║
+║  Score = Documental(40) + Chamados(20) + Histórico(15)       ║
+║        + Câmbio(15) + Clima(10) = máximo 100 pontos         ║
+╠══════════════════════════════════════════════════════════════╣
+║  Documental:  vencido=40 | 0-7d=35 | 8-30d=25 | indef=20   ║
+║  Chamados:    +7pts por chamado crítico aberto (máx 20)      ║
+║  Histórico:   histórico_atrasos=true → +15pts                ║
+║  Câmbio:      crítica=15 | alta=8 | média=3                  ║
+║  Climático:   >100mm=10 | >60mm=7 | moderado=5              ║
+╠══════════════════════════════════════════════════════════════╣
+║  🔴 CRÍTICO > 80  |  🟠 ALTO 60-79  |  🟡 MÉDIO 40-59       ║
+║  🟢 BAIXO < 40                                               ║
 ╚══════════════════════════════════════════════════════════════╝
+
+Exemplo real: OP-2026-RS-012 → Score 97/100 (CRÍTICO)
+  Documental vencido=40 + 3 chamados=21 + histórico=15 + câmbio=15 + clima=7 → 97pts
 ```
 
 ---
 
-## Técnicas Implementadas
+## 💼 Inteligência Comercial — 4 Tipos de Oportunidade
 
-| Técnica | Implementação | Evidência |
-|---------|--------------|-----------|
-| **Prompt Engineering** | 7 system prompts distintos com papel, escopo, formato, anti-hallucination e anti-injection | `docs/arquitetura/system-prompts.md` |
-| **Context Engineering** | 3 camadas: Redis (1h) + PostgreSQL (90d) + Supabase (permanente) | `docs/arquitetura/context-engineering.md` |
-| **RAG / Recuperação** | PostgreSQL filtrado + Supabase por telefone + Open-Meteo por GPS + AwesomeAPI | `logs/execucao-exemplo.json` |
-| **Dados Estruturados** | 15 tabelas com constraints, índices, views e funções SQL | `data/schema.md` |
-| **API Externa Real** | Open-Meteo (clima por GPS) + AwesomeAPI/BCB (USD/BRL) | `docs/evidencias/` |
-| **Orquestração Autônoma** | Schedule 8h seg–sáb sem input humano | `docs/evidencias/execucoes-reais.md` |
-| **Classificação de Risco** | Score composto 0-100 com 5 fatores ponderados, 4 níveis | `docs/arquitetura/score-risco.md` |
-| **Resposta Estruturada** | JSON + Email HTML + WhatsApp + Google Calendar | `docs/evidencias/` |
-| **Logs e Rastreabilidade** | 4 tabelas de audit trail + relatórios rastreáveis | `logs/` |
-| **Tratamento de Erros** | continueOnFail em todos os nós + sanitizador de resposta | `docs/arquitetura/seguranca.md` |
-| **Segurança / Anti-Injection** | Anti-injection nos 7 prompts + RLS Supabase + $vars | `docs/arquitetura/seguranca.md` |
-| **Inteligência Comercial** | 4 tipos de oportunidade: preço, clima, expansão, retenção | `docs/arquitetura/comercial.md` |
+| Tipo | Lógica | Exemplo Real |
+|------|--------|-------------|
+| **Preço Favorável** | Produto com histórico de compra caiu >3% | Ureia -5.7% → Roberto Gonçalves → R$ 116.400 potencial |
+| **Antecipação Climática** | Seca/chuva prevista + cultivo sensível + produto relevante | Seca 14d + Milho + Gotejamento → Carlos Mendes → R$ 19M |
+| **Expansão Estratégica** | Baixa presença + ponto fraco do concorrente | Jataí/GO 8% share, AgroMax fraco em pós-venda → R$ 392k/ano |
+| **Retenção de Cliente** | Renovação próxima + concorrente avançando | Marina Costa + CanaSul → antecipar proposta → R$ 23.5k |
 
 ---
 
-## Score de Risco Composto
+## 🗄️ Banco de Dados — 15 Tabelas
+
+| Categoria | Tabelas | Registros |
+|-----------|---------|-----------|
+| **Operacionais** | agroe_operacoes, agroe_documentos, agroe_chamados, agroe_contexto, agroe_chat_memory, agroe_historico_execucoes | 28 msgs conversação |
+| **Comerciais** | agroe_clientes, agroe_historico_comercial, agroe_catalogo_produtos, agroe_regioes_estrategicas, agroe_concorrentes | 16 transações históricas |
+| **Gestão** | agroe_relatorios_gestao, agroe_gestao_historico, VIEW agroe_dashboard_gestao | 6 itens rastreáveis |
+| **Integração/LGPD** | agroe_integracao_conectores, agroe_integracao_fila, agroe_lgpd_consentimento, agroe_lgpd_acesso_log | 6 conectores configurados |
+
+---
+
+## 🔗 Integração CRM/ERP
+
+Conectores pré-configurados — ativação via variável de ambiente, zero desenvolvimento adicional:
+
+| Conector | Tipo | Status |
+|----------|------|--------|
+| Salesforce | CRM | Configurado · OAuth2 |
+| HubSpot | CRM | Configurado · API Key |
+| Siagri | ERP Agro | Configurado · API Key |
+| TOTVS Agri | ERP | Configurado · OAuth2 |
+| AgroSmart | BI Agro | Configurado · API Key |
+| **Webhook Genérico** | **Qualquer sistema** | **🟢 ATIVO — funcionando hoje** |
+
+---
+
+## 🛡️ Proteção LGPD
+
+- **Row Level Security (RLS)** em todas as tabelas com dados pessoais
+- **Anonimização SQL**: `agroe_anonimiza_telefone()` e `agroe_anonimiza_nome()`
+- **Retenção mínima**: chat 90d · logs integração 180d · histórico 365d (limpeza automática)
+- **Audit trail completo**: `agroe_lgpd_consentimento` + `agroe_lgpd_acesso_log`
+
+---
+
+## 📁 Estrutura do Repositório
 
 ```
-Score = Documental (max 40) + Chamados (max 20) + Histórico (15) + Câmbio (15) + Clima (10)
-
-Documental:   vencido=40 | 0-7d=35 | 8-30d=25 | indefinido=20 | >30d=0
-Chamados:     7pts por chamado crítico aberto (max 20)
-Histórico:    histórico_atrasos=true → +15pts
-Câmbio:       exposição crítica=15 | alta=8 | média=3
-Climático:    >100mm precipitação=10 | >60mm=7 | moderado=5
-
-CRÍTICO > 80  |  ALTO 60-79  |  MÉDIO 40-59  |  BAIXO < 40
+Agro-e/
+├── README.md                                    ← Este arquivo
+├── data/
+│   └── schema.md                               ← 15 tabelas com SQL, índices e LGPD
+├── docs/
+│   ├── arquitetura/
+│   │   └── context-engineering.md             ← 3 camadas de memória e anti-injection
+│   ├── evidencias/
+│   │   ├── index.html                         ← Página visual de evidências
+│   │   ├── execucoes-reais.md                 ← IDs de execução, WhatsApp, email
+│   │   ├── relatorio-gestao-email.html        ← Cópia do email enviado em produção
+│   │   ├── wf01-entrada-monitor-proativo.svg  ← Diagrama arquitetural WF01
+│   │   └── wf02-console-multiagentes.svg      ← Diagrama arquitetural WF02
+│   ├── prints/
+│   │   ├── wf01-entrada-monitor-proativo.svg  ← Diagrama detalhado WF01 (133 nós)
+│   │   ├── wf02-console-multiagentes.svg      ← Diagrama detalhado WF02 (31 nós)
+│   │   ├── wf03-escalada-humano.svg           ← Diagrama WF03 (13 nós)
+│   │   ├── wf04-monitor-vencimentos.svg       ← Diagrama WF04 (48 nós)
+│   │   ├── wf05-relatorio-gestao.svg          ← Diagrama WF05 (8 nós)
+│   │   └── wf06-integracao-crm-erp.svg        ← Diagrama WF06 (11 nós)
+│   └── proposta/
+│       ├── agroe-documentacao-tecnica-comercial.html  ← Proposta técnica completa
+│       └── agroe-documentacao-tecnica-comercial.docx  ← Versão Word profissional
+└── logs/
+    └── execucao-exemplo-2026-05-27.json       ← Log real de execução (dados anonimizados)
 ```
 
 ---
 
-## Fontes de Dados
-
-### Internas (banco de dados)
-| Tabela | Conteúdo | Registros |
-|--------|----------|-----------|
-| `agroe_operacoes` | Fazendas, produtores, coordenadas GPS, exposição cambial | 5 |
-| `agroe_documentos` | Documentos com status, vencimento, órgão emissor | 8 |
-| `agroe_chamados` | Chamados operacionais abertos | 6 |
-| `agroe_clientes` | Perfil comercial dos produtores | 7 |
-| `agroe_historico_comercial` | Transações históricas por cliente | 16 |
-| `agroe_catalogo_produtos` | Produtos com variação de preço atual | 8 |
-| `agroe_regioes_estrategicas` | Mapa competitivo regional | 7 |
-| `agroe_concorrentes` | Concorrentes com pontos fortes/fracos | 4 |
-
-### Externas (APIs públicas reais)
-| API | Dados | Autenticação |
-|-----|-------|-------------|
-| Open-Meteo | Clima por coordenada GPS, previsão 5 dias | Pública, sem chave |
-| AwesomeAPI/BCB | USD/BRL em tempo real | Pública, sem chave |
-
----
-
-## Evidências de Funcionamento
-
-Ver pasta `docs/evidencias/`:
-
-- **Execuções reais:** prints de execuções com sucesso no n8n
-- **WhatsApp:** mensagem real recebida e respondida em produção
-- **Email de gestão:** HTML completo gerado automaticamente
-- **Banco de dados:** registros reais acumulados (28 mensagens de memória conversacional)
-- **Logs:** JSON completo de execução com fontes consultadas e alertas gerados
-
----
-
-## Stack
+## 🚀 Stack Tecnológico
 
 | Componente | Tecnologia |
 |-----------|-----------|
 | Orquestração | n8n self-hosted |
 | LLM | GPT-4.1-mini (OpenAI) |
-| Banco de Dados | Supabase (PostgreSQL) |
-| Memória rápida | Redis |
+| Banco de Dados | Supabase (PostgreSQL 17) |
+| Memória Rápida | Redis (TTL 1h) |
 | WhatsApp | Evolution API |
 | Email | Gmail OAuth2 |
 | Calendário | Google Calendar OAuth2 |
-| APIs externas | Open-Meteo + AwesomeAPI/BCB |
+| Clima | Open-Meteo (gratuita, por GPS) |
+| Câmbio | AwesomeAPI / BCB (pública) |
 
 ---
 
-## Dados Simulados
+<div align="center">
 
-A pasta `data/` contém os dados simulados utilizados para demonstração. Em produção, estas tabelas são substituídas pelos dados reais do ERP/CRM da empresa — a arquitetura permanece idêntica.
+**Desenvolvido por Andre Fernandes — Airion**  
+*Inteligência Artificial Aplicada ao Agronegócio*
 
----
-
-## Sobre
-
-**Desenvolvido por:** Andre Fernandes — Airion  
-**Versão:** agro-e v1.0 — Maio 2026  
-**Status:** Em operação real
-
-> Este repositório contém documentação, dados simulados, logs de execução e evidências de funcionamento do sistema agro-e. A implementação interna (workflows, prompts e lógica de score) é propriedade do autor e está disponível mediante licenciamento ou contrato de implementação.
-
----
+agro-e v1.0 · Maio 2026 · Em operação real
 
 *© 2026 Andre Fernandes. Disponibilizado para fins de avaliação técnica.*
+
+</div>
