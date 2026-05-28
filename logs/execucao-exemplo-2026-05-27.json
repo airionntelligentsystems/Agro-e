@@ -1,0 +1,135 @@
+{
+  "timestamp_inicio": "2026-05-27T08:00:00.000Z",
+  "timestamp_fim": "2026-05-27T08:00:52.847Z",
+  "duracao_segundos": 52.847,
+  "modo": "proativo",
+  "agente_sistema": "agro-e Inteligência Agrícola v1.0",
+  "status_execucao": "sucesso",
+
+  "fontes_consultadas": [
+    "postgres://agroe_operacoes (5 registros)",
+    "postgres://agroe_documentos (8 registros)",
+    "postgres://agroe_chamados (6 registros)",
+    "supabase://agroe_clientes (7 registros)",
+    "supabase://agroe_historico_comercial (16 registros)",
+    "supabase://agroe_catalogo_produtos (8 registros)",
+    "supabase://agroe_regioes_estrategicas (7 registros)",
+    "open-meteo.com/v1/forecast (5 coordenadas GPS)",
+    "economia.awesomeapi.com.br/json/last/USD-BRL"
+  ],
+
+  "dados_externos": {
+    "cambio": {
+      "fonte": "awesomeapi_bcb",
+      "par": "USD/BRL",
+      "cotacao": 5.7842,
+      "variacao_pct": 2.1,
+      "alerta_variacao": true,
+      "timestamp": "2026-05-27T08:00:11Z"
+    },
+    "clima_regioes": [
+      { "regiao": "Alegrete/RS", "lat": -29.7833, "lon": -55.7919,
+        "precipitacao_prevista_3d_mm": 82, "risco": "ALTO" },
+      { "regiao": "Uberlândia/MG", "lat": -19.2753, "lon": -48.2829,
+        "precipitacao_prevista_3d_mm": 68, "risco": "ALTO" },
+      { "regiao": "Cristalina/GO", "lat": -16.7694, "lon": -47.6139,
+        "precipitacao_prevista_3d_mm": 0, "risco": "SECA_PREVISTA" },
+      { "regiao": "Ribeirão Preto/SP", "lat": -21.1761, "lon": -47.8102,
+        "precipitacao_prevista_3d_mm": 12, "risco": "BAIXO" },
+      { "regiao": "Sorriso/MT", "lat": -12.5458, "lon": -55.7122,
+        "precipitacao_prevista_3d_mm": 5, "risco": "BAIXO" }
+    ]
+  },
+
+  "sumario_executivo": {
+    "total_operacoes_analisadas": 5,
+    "alertas_criticos": 1,
+    "alertas_altos": 2,
+    "alertas_medios": 1,
+    "alertas_baixos": 1,
+    "oportunidades_comerciais_identificadas": 4,
+    "score_medio_carteira": 61,
+    "recomendacao_prioritaria": "Contato URGENTE OP-2026-RS-012 — documentação vencida há 5 dias, embargo iminente"
+  },
+
+  "alertas_gerados": [
+    {
+      "id": "ALT-20260527-001",
+      "operacao_id": "OP-2026-RS-012",
+      "fazenda": "Grãos do Sul Ltda — Alegrete/RS",
+      "classificacao": "CRITICO",
+      "score": 97,
+      "resumo": "Registro Produtor Rural vencido há 5 dias. 3 chamados críticos abertos. Precipitação 82mm prevista. Câmbio +2.1% (exposição CRÍTICA em soja).",
+      "acao_recomendada": "Contato Roberto Gonçalves nas próximas 4h. Protocolar renovação SEAPDR-RS imediatamente.",
+      "prazo": "imediato",
+      "fontes": ["postgres", "open-meteo", "awesomeapi"]
+    },
+    {
+      "id": "ALT-20260527-002",
+      "operacao_id": "OP-2026-MG-001",
+      "fazenda": "Fazenda Santa Rita — Uberlândia/MG",
+      "classificacao": "ALTO",
+      "score": 72,
+      "resumo": "Licença ambiental SUPRAM-MG vence em 3 dias. Precipitação 68mm prevista. Histórico de atrasos.",
+      "acao_recomendada": "Contatar Carlos Alberto Mendes. Protocolar renovação emergencial na SUPRAM.",
+      "prazo": "imediato",
+      "fontes": ["postgres", "open-meteo"]
+    },
+    {
+      "id": "ALT-20260527-003",
+      "operacao_id": "OP-2026-GO-033",
+      "fazenda": "Integração Agro-Industrial Goiana — Cristalina/GO",
+      "classificacao": "ALTO",
+      "score": 68,
+      "resumo": "Aval Geológico vencendo em 7 dias. Seca severa prevista. Exposição cambial alta.",
+      "acao_recomendada": "Iniciar renovação CPRM. Monitorar previsão de seca para os próximos 14 dias.",
+      "prazo": "esta_semana",
+      "fontes": ["postgres", "open-meteo", "awesomeapi"]
+    }
+  ],
+
+  "oportunidades_comerciais": [
+    {
+      "tipo": "preco_favoravel",
+      "cliente": "[DADO PESSOAL ANONIMIZADO]",
+      "municipio": "Alegrete/RS",
+      "produto": "Ureia granulada",
+      "variacao_preco": "-5.7%",
+      "acao": "Oferta de reposição antecipada safra 26/27 com desconto adicional",
+      "prazo": "imediato",
+      "potencial_receita_estimado": "R$ 116.400"
+    },
+    {
+      "tipo": "antecipacao_climatica",
+      "cliente": "[DADO PESSOAL ANONIMIZADO]",
+      "municipio": "Uberlândia/MG",
+      "cultivo": "milho",
+      "produto": "Sistema de Gotejamento (-5.3%)",
+      "acao": "Visita técnica urgente. Projeto 450ha com financiamento 24x.",
+      "prazo": "esta_semana",
+      "potencial_receita_estimado": "R$ 19.181.250"
+    },
+    {
+      "tipo": "expansao_estrategica",
+      "regiao": "Jataí/GO",
+      "presenca_empresa": "8%",
+      "concorrente_lider": "AgroMax (40%) — fraco em pós-venda",
+      "acao": "Proposta à Cooperativa Cerrado Verde: assessoria técnica inclusa + preço competitivo",
+      "prazo": "este_mes",
+      "potencial_receita_estimado": "R$ 392.000/ano"
+    },
+    {
+      "tipo": "risco_perda_cliente",
+      "cliente": "[DADO PESSOAL ANONIMIZADO]",
+      "municipio": "Ribeirão Preto/SP",
+      "situacao": "Renovação contratual jul/26. CanaSul avançando.",
+      "acao": "Antecipar proposta antes de junho com assessoria técnica mensal inclusa",
+      "prazo": "este_mes",
+      "risco_perda": "R$ 23.500/ano"
+    }
+  ],
+
+  "relatorios_gestao_gerados": 4,
+  "alertas_calendario_google": 1,
+  "nota": "Dados pessoais de produtores anonimizados neste log público. Log interno contém dados completos protegidos por LGPD."
+}
