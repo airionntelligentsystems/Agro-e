@@ -83,7 +83,7 @@ O relatório é gerado automaticamente e enviado por email (Gmail OAuth2) e What
 │  ├── 📄 agente_analista_documental    → score 0-40pts               │
 │  ├── 🌤️ agente_monitor_climatico      → Open-Meteo por GPS          │
 │  ├── 💱 agente_analista_cambio        → AwesomeAPI USD/BRL           │
-│  ├── 📊 agente_monitoramento_proativo → score composto 0-100         │
+│  ├── 📊 agente_monitoramento_autonomo → score composto 0-100         │
 │  ├── 💼 agente_inteligencia_comercial → 4 tipos de oportunidade      │
 │  ├── 📅 Google Calendar × 3 tools    → alertas automáticos          │
 │  └── 🆘 encaminhar_responsavel_humano → WF03                         │
