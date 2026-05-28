@@ -219,7 +219,7 @@ Agro-e/
 
 <div align="center">
 
-**Andre Fernandes**  
+**André Fernandes**  
 *Inteligência Artificial Aplicada ao Agronegócio*
 
 agro-e v1.0 · Maio 2026
