@@ -61,7 +61,6 @@ SELECT COUNT(*) FROM agroe_chat_memory;
 
 **Disparado via:** WF05 — Schedule 9h + Webhook de teste  
 **Destinatário:** andre_henrique.fernandes@outlook.com  
-**Avaliação do usuário após receber:** *"ficou excelente, altíssimo nível"*
 
 O email HTML inclui:
 - Cards de resumo executivo (críticos, altos, médios, oportunidades)
