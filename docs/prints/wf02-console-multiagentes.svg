@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f0a500"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a472a"/>
+    </marker>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000022"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="860" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <rect x="20" y="20" width="1360" height="56" rx="8" fill="#1a472a"/>
+  <text x="40" y="52" fill="white" font-size="20" font-weight="bold">🧠 WF02 — Console Multi-Agentes</text>
+  <text x="1150" y="52" fill="#a8e6c3" font-size="13">31 nós · GPT-4.1-mini · ATIVO</text>
+
+  <!-- Entrada -->
+  <rect x="20" y="110" width="160" height="68" rx="8" fill="white" stroke="#94a3b8" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="20" y="110" width="160" height="8" rx="8" fill="#94a3b8"/>
+  <text x="100" y="148" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">📥 Recebe Dados</text>
+  <text x="100" y="166" text-anchor="middle" fill="#64748b" font-size="11">executeWorkflow Trigger</text>
+
+  <!-- Busca Contexto -->
+  <rect x="220" y="110" width="160" height="68" rx="8" fill="white" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="220" y="110" width="160" height="8" rx="8" fill="#8b5cf6"/>
+  <text x="300" y="148" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">🗄️ Busca Contexto</text>
+  <text x="300" y="166" text-anchor="middle" fill="#64748b" font-size="11">Supabase agroe_contexto</text>
+
+  <!-- AGENTE ROTEADOR - Central e maior -->
+  <rect x="420" y="90" width="240" height="120" rx="12" fill="#1a472a" filter="url(#shadow)"/>
+  <text x="540" y="130" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🤖 Agente Roteador</text>
+  <text x="540" y="152" text-anchor="middle" fill="#a8e6c3" font-size="12">GPT-4.1-mini · temperatura 0.5</text>
+  <text x="540" y="172" text-anchor="middle" fill="#a8e6c3" font-size="11">Postgres Chat Memory</text>
+  <text x="540" y="190" text-anchor="middle" fill="#6ee7b7" font-size="11">↓ orquestra 5 subagentes</text>
+
+  <!-- TOOLS - Think -->
+  <rect x="720" y="40" width="155" height="58" rx="8" fill="white" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="797" y="68" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="bold">🤔 Think Tool × 2</text>
+  <text x="797" y="86" text-anchor="middle" fill="#64748b" font-size="10">Raciocínio explícito</text>
+
+  <!-- Calendar tools -->
+  <rect x="720" y="115" width="155" height="58" rx="8" fill="white" stroke="#0ea5e9" stroke-width="2" filter="url(#shadow)"/>
+  <text x="797" y="143" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="bold">📅 Calendar Tools × 3</text>
+  <text x="797" y="161" text-anchor="middle" fill="#64748b" font-size="10">criar / atualizar / cancelar</text>
+
+  <!-- Escalar Humano -->
+  <rect x="720" y="190" width="155" height="58" rx="8" fill="white" stroke="#ef4444" stroke-width="2" filter="url(#shadow)"/>
+  <text x="797" y="218" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="bold">🆘 Escalar Humano</text>
+  <text x="797" y="236" text-anchor="middle" fill="#64748b" font-size="10">→ WF03</text>
+
+  <!-- Connections tools to agente_roteador -->
+  <line x1="720" y1="69" x2="665" y2="140" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="720" y1="144" x2="665" y2="148" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="720" y1="219" x2="665" y2="156" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- ─── 5 SUBAGENTES ─── -->
+  <!-- Analista Documental -->
+  <rect x="30" y="310" width="210" height="100" rx="8" fill="white" stroke="#1a472a" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="310" width="210" height="8" rx="8" fill="#1a472a"/>
+  <text x="135" y="340" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">📄 Analista Documental</text>
+  <text x="135" y="358" text-anchor="middle" fill="#64748b" font-size="11">Score 0-40pts</text>
+  <text x="135" y="374" text-anchor="middle" fill="#64748b" font-size="11">Vencido=CRÍTICO</text>
+  <text x="135" y="392" text-anchor="middle" fill="#64748b" font-size="10">Bloqueadores operacionais</text>
+
+  <!-- Monitor Climático -->
+  <rect x="265" y="310" width="210" height="100" rx="8" fill="white" stroke="#0ea5e9" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="265" y="310" width="210" height="8" rx="8" fill="#0ea5e9"/>
+  <text x="370" y="340" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">🌤️ Monitor Climático</text>
+  <text x="370" y="358" text-anchor="middle" fill="#64748b" font-size="11">>60mm=ALTO | >100mm=CRÍTICO</text>
+  <text x="370" y="374" text-anchor="middle" fill="#64748b" font-size="11">Cruza clima × documentos</text>
+  <text x="370" y="392" text-anchor="middle" fill="#64748b" font-size="10">Open-Meteo por GPS</text>
+
+  <!-- Analista Câmbio -->
+  <rect x="500" y="310" width="210" height="100" rx="8" fill="white" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="500" y="310" width="210" height="8" rx="8" fill="#10b981"/>
+  <text x="605" y="340" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">💱 Analista Câmbio</text>
+  <text x="605" y="358" text-anchor="middle" fill="#64748b" font-size="11">USD/BRL tempo real</text>
+  <text x="605" y="374" text-anchor="middle" fill="#64748b" font-size="11">Variação >1.5%=ALERTA</text>
+  <text x="605" y="392" text-anchor="middle" fill="#64748b" font-size="10">Exposição por cultivo</text>
+
+  <!-- Monitor Proativo -->
+  <rect x="735" y="310" width="210" height="100" rx="8" fill="white" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="735" y="310" width="210" height="8" rx="8" fill="#f59e0b"/>
+  <text x="840" y="340" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">📊 Monitor Proativo</text>
+  <text x="840" y="358" text-anchor="middle" fill="#64748b" font-size="11">Score composto 0-100</text>
+  <text x="840" y="374" text-anchor="middle" fill="#64748b" font-size="11">5 fatores ponderados</text>
+  <text x="840" y="392" text-anchor="middle" fill="#64748b" font-size="10">Relatório carteira completa</text>
+
+  <!-- Inteligência Comercial — DESTAQUE -->
+  <rect x="970" y="300" width="220" height="120" rx="8" fill="white" stroke="#f0a500" stroke-width="3" filter="url(#shadow)"/>
+  <rect x="970" y="300" width="220" height="8" rx="8" fill="#f0a500"/>
+  <text x="1080" y="328" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">💼 Inteligência Comercial</text>
+  <text x="1080" y="346" text-anchor="middle" fill="#64748b" font-size="11">Preço favorável + histórico</text>
+  <text x="1080" y="362" text-anchor="middle" fill="#64748b" font-size="11">Antecipação climática</text>
+  <text x="1080" y="378" text-anchor="middle" fill="#64748b" font-size="11">Expansão estratégica</text>
+  <text x="1080" y="394" text-anchor="middle" fill="#64748b" font-size="11">Risco perda de cliente</text>
+  <rect x="1000" y="408" width="160" height="18" rx="4" fill="#fef3c7"/>
+  <text x="1080" y="421" text-anchor="middle" fill="#b45309" font-size="10" font-weight="bold">★ DIFERENCIAL EXCLUSIVO</text>
+
+  <!-- Connections from Agente Roteador to Subagentes -->
+  <line x1="480" y1="210" x2="135" y2="308" stroke="#1a472a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-green)"/>
+  <line x1="500" y1="210" x2="370" y2="308" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <line x1="540" y1="210" x2="605" y2="308" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <line x1="580" y1="210" x2="840" y2="308" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <line x1="600" y1="210" x2="1080" y2="298" stroke="#f0a500" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrow-gold)"/>
+
+  <!-- ─── PÓS-ANÁLISE ─── -->
+  <!-- gerarNovoContexto -->
+  <rect x="200" y="530" width="200" height="68" rx="8" fill="white" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="200" y="530" width="200" height="8" rx="8" fill="#8b5cf6"/>
+  <text x="300" y="564" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">🧠 Gera Novo Contexto</text>
+  <text x="300" y="582" text-anchor="middle" fill="#64748b" font-size="11">Code node (sem chainLlm)</text>
+
+  <!-- atualizaContexto -->
+  <rect x="440" y="530" width="200" height="68" rx="8" fill="white" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="440" y="530" width="200" height="8" rx="8" fill="#8b5cf6"/>
+  <text x="540" y="564" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">💾 Atualiza Contexto</text>
+  <text x="540" y="582" text-anchor="middle" fill="#64748b" font-size="11">Supabase agroe_contexto</text>
+
+  <!-- devolveResposta -->
+  <rect x="680" y="530" width="200" height="68" rx="8" fill="white" stroke="#1a472a" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="680" y="530" width="200" height="8" rx="8" fill="#1a472a"/>
+  <text x="780" y="564" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">📤 Devolve Resposta</text>
+  <text x="780" y="582" text-anchor="middle" fill="#64748b" font-size="11">→ WF01 (envio WhatsApp)</text>
+
+  <!-- Log + Relatórios -->
+  <rect x="920" y="530" width="200" height="68" rx="8" fill="white" stroke="#64748b" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1020" y="558" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">📋 Log + Relatórios</text>
+  <text x="1020" y="574" text-anchor="middle" fill="#64748b" font-size="11">historico_execucoes</text>
+  <text x="1020" y="590" text-anchor="middle" fill="#64748b" font-size="11">relatorios_gestao</text>
+
+  <!-- Lines post-analise -->
+  <line x1="540" y1="210" x2="300" y2="528" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="400" y1="564" x2="438" y2="564" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="640" y1="564" x2="678" y2="564" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="880" y1="564" x2="918" y2="564" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrows input -->
+  <line x1="180" y1="144" x2="218" y2="144" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="380" y1="144" x2="418" y2="144" stroke="#1a472a" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+  <!-- Footer -->
+  <text x="700" y="842" text-anchor="middle" fill="#94a3b8" font-size="12">© 2026 Andre Fernandes · agro-e v1.0 · WF02 de 6 workflows</text>
+</svg>
