@@ -76,7 +76,7 @@ Implementada em 4 camadas simultâneas:
 
 ---
 
-## Fluxo de Dados — Modo Proativo
+## Fluxo de Dados — Modo Autônomo 
 
 ```
 Schedule 8h
