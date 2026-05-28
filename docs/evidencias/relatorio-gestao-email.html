@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>agro-e | Relatório de Gestão — 27/05/2026</title>
+<style>
+  body { margin: 0; padding: 0; background: #f1f5f9; font-family: Arial, sans-serif; }
+  .wrapper { max-width: 680px; margin: 0 auto; background: white; }
+  /* Header */
+  .header { background: linear-gradient(135deg, #1a472a, #2d6a4f); padding: 32px 40px; }
+  .header-top { display: flex; justify-content: space-between; align-items: center; }
+  .logo { color: white; font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+  .logo span { color: #f0a500; }
+  .header-date { color: rgba(255,255,255,0.7); font-size: 13px; text-align: right; }
+  .header-title { color: rgba(255,255,255,0.9); font-size: 14px; margin-top: 4px; }
+  .header-sub { color: white; font-size: 18px; font-weight: 700; margin-top: 16px; }
+  /* Summary cards */
+  .summary { padding: 24px 40px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+  .summary-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 16px; }
+  .cards { display: flex; gap: 12px; flex-wrap: wrap; }
+  .card { flex: 1; min-width: 100px; background: white; border-radius: 10px; padding: 14px 16px; border: 1px solid #e2e8f0; text-align: center; }
+  .card-num { font-size: 28px; font-weight: 900; line-height: 1; }
+  .card-label { font-size: 11px; color: #64748b; margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .card.critico .card-num { color: #dc2626; }
+  .card.alto .card-num { color: #ea580c; }
+  .card.medio .card-num { color: #ca8a04; }
+  .card.oport .card-num { color: #16a34a; }
+  .card.sla .card-num { color: #7c3aed; }
+  /* SLA Alert */
+  .sla-alert { margin: 0 40px 24px; background: #fef3c7; border: 1px solid #fcd34d; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 14px 18px; }
+  .sla-alert-title { font-size: 13px; font-weight: 700; color: #92400e; margin-bottom: 4px; }
+  .sla-alert-text { font-size: 12px; color: #78350f; }
+  /* Section */
+  .section { padding: 8px 40px 24px; }
+  .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; padding: 16px 0 12px; border-top: 1px solid #f1f5f9; margin-top: 8px; }
+  /* Item cards */
+  .item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; }
+  .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+  .item-title { font-size: 14px; font-weight: 700; color: #0f172a; flex: 1; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+  .badge-critico { background: #fee2e2; color: #dc2626; }
+  .badge-alto    { background: #ffedd5; color: #ea580c; }
+  .badge-medio   { background: #fef9c3; color: #ca8a04; }
+  .badge-oport   { background: #dcfce7; color: #16a34a; }
+  .item-meta { font-size: 12px; color: #64748b; margin-bottom: 8px; }
+  .item-desc { font-size: 13px; color: #334155; line-height: 1.5; margin-bottom: 10px; }
+  .item-acao { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; }
+  .item-acao-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; margin-bottom: 4px; }
+  .item-acao-text { font-size: 13px; color: #0f172a; font-weight: 600; }
+  .item-score { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+  .score-bar-bg { flex: 1; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+  .score-bar-fill { height: 100%; border-radius: 3px; }
+  .score-val { font-size: 12px; font-weight: 700; }
+  /* Table */
+  .table-wrap { overflow-x: auto; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { background: #1a472a; color: white; padding: 10px 12px; text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #334155; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  /* Footer */
+  .footer { background: #0f172a; padding: 24px 40px; }
+  .footer-logo { color: white; font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+  .footer-text { color: #64748b; font-size: 12px; line-height: 1.6; }
+  .footer-copy { color: #334155; font-size: 11px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #1e293b; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo">agro-<span>e</span></div>
+      <div class="header-date">
+        <div style="color:rgba(255,255,255,0.9);font-weight:700;">Terça-feira, 27 de Maio de 2026</div>
+        <div class="header-title">Relatório gerado às 09:00 automaticamente</div>
+      </div>
+    </div>
+    <div class="header-sub">📊 Relatório de Gestão — Visão Executiva da Carteira</div>
+  </div>
+
+  <!-- SUMMARY CARDS -->
+  <div class="summary">
+    <div class="summary-title">📋 Resumo Executivo</div>
+    <div class="cards">
+      <div class="card critico">
+        <div class="card-num">1</div>
+        <div class="card-label">🔴 Críticos</div>
+      </div>
+      <div class="card alto">
+        <div class="card-num">2</div>
+        <div class="card-label">🟠 Altos</div>
+      </div>
+      <div class="card medio">
+        <div class="card-num">1</div>
+        <div class="card-label">🟡 Médios</div>
+      </div>
+      <div class="card oport">
+        <div class="card-num">4</div>
+        <div class="card-label">💼 Oportunidades</div>
+      </div>
+      <div class="card sla">
+        <div class="card-num">2</div>
+        <div class="card-label">⏱️ SLA Vencido</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLA ALERT -->
+  <div class="sla-alert">
+    <div class="sla-alert-title">⚠️ Atenção: 2 itens com SLA vencido</div>
+    <div class="sla-alert-text">Os itens CRÍTICO [RS-012] e ALTO [MG-001] estão com SLA vencido. Priorize resolução imediata.</div>
+  </div>
+
+  <!-- ITENS CRÍTICOS -->
+  <div class="section">
+    <div class="section-title">🔴 Alertas Críticos</div>
+
+    <div class="item" style="border-left: 4px solid #dc2626;">
+      <div class="item-header">
+        <div class="item-title">[RS-012] Grãos do Sul Ltda — Registro Produtor Rural VENCIDO</div>
+        <span class="badge badge-critico">CRÍTICO · Score 97</span>
+      </div>
+      <div class="item-meta">📍 Alegrete/RS &nbsp;|&nbsp; 🌾 Soja &nbsp;|&nbsp; 📅 Criado: 27/05/2026 08:00 &nbsp;|&nbsp; ⏱️ SLA: VENCIDO</div>
+      <div class="item-desc">Registro Produtor Rural vencido há 5 dias (SEAPDR-RS). 3 chamados críticos em aberto. Precipitação prevista 82mm nos próximos 3 dias. Exposição cambial CRÍTICA em soja (USD/BRL +2.1%). Risco de embargo operacional iminente.</div>
+      <div class="item-score">
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:97%;background:linear-gradient(90deg,#dc2626,#ef4444)"></div></div>
+        <div class="score-val" style="color:#dc2626">97/100</div>
+      </div>
+      <div class="item-acao" style="margin-top:10px">
+        <div class="item-acao-label">⚡ Ação Recomendada</div>
+        <div class="item-acao-text">Contato Roberto Gonçalves nas próximas 4h. Protocolar renovação SEAPDR-RS imediatamente. Prazo: IMEDIATO.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ITENS ALTOS -->
+  <div class="section">
+    <div class="section-title">🟠 Alertas Altos</div>
+
+    <div class="item" style="border-left: 4px solid #ea580c;">
+      <div class="item-header">
+        <div class="item-title">[MG-001] Fazenda Santa Rita — Licença Ambiental vencendo em 3 dias</div>
+        <span class="badge badge-alto">ALTO · Score 72</span>
+      </div>
+      <div class="item-meta">📍 Uberlândia/MG &nbsp;|&nbsp; 🌾 Milho &nbsp;|&nbsp; 📅 Vencimento: 30/05/2026 &nbsp;|&nbsp; ⏱️ SLA: VENCIDO</div>
+      <div class="item-desc">Licença Ambiental SUPRAM-MG vencendo em 3 dias. Precipitação 68mm prevista. Histórico de atrasos no perfil do produtor. Renovação urgente necessária para manter operação ativa.</div>
+      <div class="item-score">
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:72%;background:linear-gradient(90deg,#ea580c,#f97316)"></div></div>
+        <div class="score-val" style="color:#ea580c">72/100</div>
+      </div>
+      <div class="item-acao" style="margin-top:10px">
+        <div class="item-acao-label">⚡ Ação Recomendada</div>
+        <div class="item-acao-text">Contatar Carlos Alberto Mendes hoje. Protocolar renovação emergencial na SUPRAM-MG (31) 3916-1400. Prazo: ESTA SEMANA.</div>
+      </div>
+    </div>
+
+    <div class="item" style="border-left: 4px solid #ea580c;">
+      <div class="item-header">
+        <div class="item-title">[GO-033] Integração Agro-Industrial Goiana — Aval Geológico em 7 dias</div>
+        <span class="badge badge-alto">ALTO · Score 68</span>
+      </div>
+      <div class="item-meta">📍 Cristalina/GO &nbsp;|&nbsp; 🌾 Soja + Algodão &nbsp;|&nbsp; 📅 Vencimento: 03/06/2026</div>
+      <div class="item-desc">Aval Geológico CPRM vencendo em 7 dias. Seca severa prevista para os próximos 14 dias na região. Exposição cambial alta (algodão). Renovação deve ser iniciada imediatamente.</div>
+      <div class="item-score">
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:68%;background:linear-gradient(90deg,#ea580c,#f97316)"></div></div>
+        <div class="score-val" style="color:#ea580c">68/100</div>
+      </div>
+      <div class="item-acao" style="margin-top:10px">
+        <div class="item-acao-label">⚡ Ação Recomendada</div>
+        <div class="item-acao-text">Iniciar renovação CPRM. Monitorar previsão de seca para irrigação. Prazo: ESTA SEMANA.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- OPORTUNIDADES -->
+  <div class="section">
+    <div class="section-title">💼 Oportunidades Comerciais Identificadas</div>
+
+    <div class="item" style="border-left: 4px solid #16a34a;">
+      <div class="item-header">
+        <div class="item-title">💰 Ureia granulada caiu 5.7% — Alegrete/RS</div>
+        <span class="badge badge-oport">PREÇO FAVORÁVEL</span>
+      </div>
+      <div class="item-meta">👤 Roberto Gonçalves &nbsp;|&nbsp; 📦 Histórico: 3 compras de Ureia &nbsp;|&nbsp; 💰 Potencial: R$ 116.400</div>
+      <div class="item-acao">
+        <div class="item-acao-label">💡 Ação Recomendada</div>
+        <div class="item-acao-text">Oferta de reposição antecipada safra 26/27 com desconto adicional de 3%. Contato: IMEDIATO.</div>
+      </div>
+    </div>
+
+    <div class="item" style="border-left: 4px solid #16a34a;">
+      <div class="item-header">
+        <div class="item-title">🌤️ Seca prevista 14 dias + Milho + Gotejamento — Uberlândia/MG</div>
+        <span class="badge badge-oport">ANTECIPAÇÃO CLIMÁTICA</span>
+      </div>
+      <div class="item-meta">👤 Carlos Alberto Mendes &nbsp;|&nbsp; 🌾 450 ha milho &nbsp;|&nbsp; 💰 Potencial: R$ 19.181.250</div>
+      <div class="item-acao">
+        <div class="item-acao-label">💡 Ação Recomendada</div>
+        <div class="item-acao-text">Visita técnica urgente. Projeto 450ha com Sistema de Gotejamento (-5.3%) + financiamento 24x. Prazo: ESTA SEMANA.</div>
+      </div>
+    </div>
+
+    <div class="item" style="border-left: 4px solid #16a34a;">
+      <div class="item-header">
+        <div class="item-title">📍 Expansão Jataí/GO — AgroMax fraco em pós-venda</div>
+        <span class="badge badge-oport">EXPANSÃO ESTRATÉGICA</span>
+      </div>
+      <div class="item-meta">🏢 Cooperativa Cerrado Verde &nbsp;|&nbsp; 📊 Presença atual: 8% &nbsp;|&nbsp; 💰 Potencial: R$ 392.000/ano</div>
+      <div class="item-acao">
+        <div class="item-acao-label">💡 Ação Recomendada</div>
+        <div class="item-acao-text">Proposta à Cooperativa Cerrado Verde: assessoria técnica inclusa + preço competitivo. Diferencial vs AgroMax: pós-venda local. Prazo: ESTE MÊS.</div>
+      </div>
+    </div>
+
+    <div class="item" style="border-left: 4px solid #16a34a;">
+      <div class="item-header">
+        <div class="item-title">⚠️ Risco perda Marina Costa — CanaSul avançando</div>
+        <span class="badge badge-oport">RETENÇÃO DE CLIENTE</span>
+      </div>
+      <div class="item-meta">📍 Ribeirão Preto/SP &nbsp;|&nbsp; 💰 Receita em risco: R$ 23.500/ano &nbsp;|&nbsp; 📅 Renovação: Jul/2026</div>
+      <div class="item-acao">
+        <div class="item-acao-label">💡 Ação Recomendada</div>
+        <div class="item-acao-text">Antecipar proposta de renovação antes de junho com assessoria técnica mensal inclusa. Prazo: ESTE MÊS.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TABELA COMPLETA -->
+  <div class="section">
+    <div class="section-title">📋 Tabela Completa de Pendências</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Tipo</th>
+            <th>Prioridade</th>
+            <th>Score</th>
+            <th>Prazo</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>[RS-012] Registro Produtor Rural vencido</td>
+            <td>Risco Documental</td>
+            <td><span class="badge badge-critico">CRÍTICO</span></td>
+            <td style="font-weight:800;color:#dc2626">97</td>
+            <td>Imediato</td>
+            <td>🔴 Pendente</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>[MG-001] Licença Ambiental SUPRAM-MG vence 30/05</td>
+            <td>Risco Documental</td>
+            <td><span class="badge badge-alto">ALTO</span></td>
+            <td style="font-weight:800;color:#ea580c">72</td>
+            <td>Esta semana</td>
+            <td>🔴 Pendente</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>[GO-033] Aval Geológico CPRM vence 03/06</td>
+            <td>Risco Documental</td>
+            <td><span class="badge badge-alto">ALTO</span></td>
+            <td style="font-weight:800;color:#ea580c">68</td>
+            <td>Esta semana</td>
+            <td>🟡 Pendente</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Ureia -5.7% · Roberto Gonçalves · Alegrete/RS</td>
+            <td>Oportunidade</td>
+            <td><span class="badge badge-oport">ALTA</span></td>
+            <td>—</td>
+            <td>Imediato</td>
+            <td>🟡 Pendente</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Gotejamento · Carlos Mendes · 450ha Milho</td>
+            <td>Oportunidade</td>
+            <td><span class="badge badge-oport">ALTA</span></td>
+            <td>—</td>
+            <td>Esta semana</td>
+            <td>🟡 Pendente</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Expansão Jataí/GO · Coop. Cerrado Verde</td>
+            <td>Expansão</td>
+            <td><span class="badge badge-oport">ALTA</span></td>
+            <td>—</td>
+            <td>Este mês</td>
+            <td>🟡 Pendente</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">🌱 agro-e Inteligência Agrícola</div>
+    <div class="footer-text">
+      Este relatório foi gerado automaticamente pelo sistema agro-e às 09:00 de 27/05/2026.<br>
+      Baseado em análise de 5 operações, 8 documentos, 7 clientes, dados climáticos reais (Open-Meteo)<br>
+      e câmbio USD/BRL em tempo real (AwesomeAPI/BCB).
+    </div>
+    <div class="footer-copy">
+      © 2026 Andre Fernandes · Airion · Sistema agro-e v1.0 · Disponibilizado para fins de avaliação técnica
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
