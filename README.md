@@ -25,7 +25,42 @@
 
 ---
 
-## O Problema que Este Sistema Resolve
+## Índice de Navegação
+
+| # | Seção |
+|---|---|
+| 1 | [O Problema que Este Sistema Resolve](#-o-problema-que-este-sistema-resolve) |
+| 2 | [Evidências de Funcionamento em Produção](#-evidências-de-funcionamento-em-produção) |
+| 3 | [Todas as Capacidades — Visão Rápida](#-todas-as-capacidades--visão-rápida) |
+| 4 | [Como o Sistema Opera](#-como-o-sistema-opera) |
+| 5 | [Arquitetura — 6 Workflows, 244 Nós](#-arquitetura--6-workflows-244-nós) |
+| 6 | [Funcionalidades Detalhadas — Como e Quando Cada Uma Opera](#-funcionalidades-detalhadas--como-e-quando-cada-uma-opera) |
+| 6.1 | → [🎙️ Áudio — Transcrição Automática](#️-processamento-de-áudio-asr) |
+| 6.2 | → [📄 Documentos — Leitura e Análise](#-leitura-de-documentos-idp) |
+| 6.3 | → [🖼️ Imagens — Visão Computacional](#️-visão-computacional) |
+| 6.4 | → [📱 WhatsApp Bidirecional Reativo](#-whatsapp-bidirecional-reativo) |
+| 6.5 | → [⏰ Monitor Proativo Autônomo 8h](#-monitor-proativo-autônomo-8h) |
+| 6.6 | → [🏗️ Motor de Inteligência Comercial](#️-motor-de-inteligência-comercial) |
+| 6.7 | → [📋 Agente Analista Documental](#-agente-analista-documental) |
+| 6.8 | → [🌧️ Agente Monitor Climático](#️-agente-monitor-climático) |
+| 6.9 | → [💱 Agente Analista de Câmbio](#-agente-analista-de-câmbio) |
+| 6.10 | → [📊 Score Composto de Risco 0–100](#-agente-de-monitoramento-proativo-score-composto-0100) |
+| 6.11 | → [📧 Email Real via Gmail API](#-envio-de-email-real-gmail-api) |
+| 6.12 | → [📅 Alertas Google Calendar](#-alertas-no-google-calendar) |
+| 6.13 | → [🧠 Memória Conversacional Persistente](#-memória-conversacional-persistente--3-camadas) |
+| 6.14 | → [📊 Relatórios de Gestão BI](#-relatórios-de-gestão-e-rastreabilidade-wf05) |
+| 6.15 | → [👤 Onboarding Zero-Touch](#-onboarding-zero-touch) |
+| 6.16 | → [🔁 Escalada para Humano HITL](#-escalada-para-humano--human-in-the-loop-wf03) |
+| 6.17 | → [🔌 Integração CRM/ERP Universal](#-integração-crmerp-universal-wf06) |
+| 7 | [Stack Tecnológico](#-stack-tecnológico) |
+| 8 | [Proteção de Dados — LGPD](#-proteção-de-dados--lgpd) |
+| 9 | [Técnicas de IA Implementadas](#-técnicas-de-ia-implementadas--nível-avançado) |
+| 10 | [Roadmap](#-roadmap) |
+| 11 | [Evidências — Arquivos](#-evidências) |
+
+---
+
+## 🌱 O Problema que Este Sistema Resolve
 
 Empresas do agronegócio com carteiras de 50–500 produtores enfrentam um problema estrutural silencioso: **informação crítica se perde entre planilhas, sistemas desconectados e comunicação manual.**
 
@@ -35,7 +70,7 @@ O custo não é a falta de dados — é a falta de inteligência sobre os dados.
 
 ---
 
-## Evidências de Funcionamento em Produção
+## 📸 Evidências de Funcionamento em Produção
 
 > Este sistema está em produção real, atendendo mensagens via WhatsApp com respostas reais. As evidências abaixo foram capturadas durante sessão de validação em **29/05/2026**.
 
@@ -56,7 +91,35 @@ O relatório interativo inclui: prints reais do WhatsApp, emails entregues na ca
 
 ---
 
-## Como o Sistema Opera
+## ⚡ Todas as Capacidades — Visão Rápida
+
+O sistema possui **17 capacidades funcionais**. As marcadas com ★ são diferenciais multimodais — vão além do texto e processam áudio, imagem e documentos diretamente pelo WhatsApp.
+
+| # | Capacidade | Tecnologia | Quando Ativa |
+|---|---|---|---|
+| ★ 1 | **🎙️ Áudio — Transcrição Automática** | OpenAI Whisper | Ao receber mensagem de voz no WhatsApp |
+| ★ 2 | **📄 Documentos — Leitura e Análise** | PDF Extract + Context Injection | Ao receber PDF/documento no WhatsApp |
+| ★ 3 | **🖼️ Imagens — Visão Computacional** | OpenAI Vision | Ao receber foto/imagem no WhatsApp |
+| 4 | 📱 WhatsApp Bidirecional Reativo | Evolution API + Redis | Ao receber qualquer mensagem |
+| 5 | ⏰ Monitor Proativo Autônomo | Cron 8h seg–sáb | Automaticamente às 8h, todo dia útil |
+| 6 | 🏗️ Motor de Inteligência Comercial | SQL + JS Engine | Ciclo proativo + consulta reativa |
+| 7 | 📋 Agente Analista Documental | Score 0–40pts + WF04 | Proativo 8h + menção a documentos |
+| 8 | 🌧️ Agente Monitor Climático | Open-Meteo por GPS | Proativo 8h + consulta por região |
+| 9 | 💱 Agente Analista de Câmbio | AwesomeAPI USD/BRL | Proativo 8h + consulta cambial |
+| 10 | 📊 Score Composto de Risco 0–100 | 5 fatores ponderados | Ciclo proativo 8h |
+| 11 | 📧 Email Real via Gmail API | Gmail OAuth2 + Tool Calling | Proativo 9h + solicitação reativa |
+| 12 | 📅 Alertas Google Calendar | Google Calendar OAuth2 | Solicitação reativa |
+| 13 | 🧠 Memória Conversacional Persistente | Redis + Postgres + Supabase | Em toda interação |
+| 14 | 📊 Relatórios de Gestão BI | WF05 + Supabase REST | Automaticamente às 9h todo dia útil |
+| 15 | 👤 Onboarding Zero-Touch | Auto-register Supabase | Na primeira mensagem de número novo |
+| 16 | 🔁 Escalada para Humano HITL | WF03 + Context Handoff | Score >85 ou decisão crítica |
+| 17 | 🔌 Integração CRM/ERP Universal | WF06 + 5 conectores | Passivamente em todo evento gerado |
+
+> **Nota sobre multimodalidade (★):** As capacidades 1, 2 e 3 estão implementadas no WF01, no nó Normalizador Universal. O workflow de entrada já identifica automaticamente o tipo de mídia recebida (texto/áudio/imagem/documento) e aciona o processamento correto — Whisper para áudio, Vision para imagem, extração de texto para PDF — antes de repassar ao agente. Isso é visível na topologia do WF01 exibida no diagrama de arquitetura.
+
+---
+
+## 🔄 Como o Sistema Opera
 
 O agro-e funciona em dois modos simultâneos, complementares e independentes:
 
@@ -72,13 +135,16 @@ O operador pergunta, o sistema responde com análise contextualizada usando hist
 
 ---
 
-## Arquitetura — 6 Workflows, 244 Nós
+## 🏗️ Arquitetura — 6 Workflows, 244 Nós
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │              WF01 — ENTRADA + MONITOR PROATIVO (133 nós)                │
-│  REATIVO:  WhatsApp → Evolution API → Normalizador → Redis → WF02       │
-│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                    │
+│                                                                          │
+│  REATIVO:  WhatsApp → Evolution API → Normalizador Universal → WF02     │
+│            └─ Texto · 🎙️ Áudio (Whisper) · 🖼️ Imagem (Vision) · 📄 PDF │
+│                                                                          │
+│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                   │
 │            └─ PostgreSQL · Supabase · Open-Meteo GPS · AwesomeAPI       │
 └───────────────────────────────┬─────────────────────────────────────────┘
                                 │
@@ -105,30 +171,42 @@ O operador pergunta, o sistema responde com análise contextualizada usando hist
 
 ---
 
-## Funcionalidades Detalhadas — Como e Quando Cada Uma Opera
+## 📖 Funcionalidades Detalhadas — Como e Quando Cada Uma Opera
+
+---
 
 ### 🎙️ Processamento de Áudio (ASR)
+
 **Como funciona:** O operador envia uma mensagem de voz pelo WhatsApp. O sistema baixa o arquivo de áudio via Evolution API, decodifica o formato OGG/Opus e transcreve o conteúdo com OpenAI Whisper. O texto transcrito entra no pipeline de processamento normalmente — o agente recebe e responde como se fosse uma mensagem de texto.
 
 **Quando ativa:** A qualquer momento em que o operador enviar um áudio no WhatsApp. Transparente para o usuário.
 
+**Implementação:** Nó de detecção de mídia no Normalizador Universal do WF01 → download do arquivo → transcrição Whisper → injeção no pipeline padrão.
+
 ---
 
 ### 📄 Leitura de Documentos (IDP)
+
 **Como funciona:** PDFs e documentos enviados pelo WhatsApp são interceptados pelo Normalizador Universal. O sistema extrai o texto do documento, armazena no contexto de sessão e disponibiliza ao agente para análise semântica. Contratos, laudos técnicos, licenças ambientais e certificados fitossanitários são processados sem configuração adicional.
 
 **Quando ativa:** Sempre que um PDF ou documento for enviado via WhatsApp pelo operador.
 
+**Implementação:** Nó de detecção de mídia no WF01 → extração de texto → context injection no Postgres Chat Memory → agente analisa inline.
+
 ---
 
 ### 🖼️ Visão Computacional
+
 **Como funciona:** Imagens enviadas pelo WhatsApp (fotos de lavoura, registros de pragas, documentos fotografados) são processadas pelo modelo OpenAI Vision. O sistema descreve e interpreta o conteúdo visual e incorpora a análise na resposta do agente.
 
 **Quando ativa:** Sempre que uma imagem for enviada via WhatsApp pelo operador.
 
+**Implementação:** Nó de detecção de mídia no WF01 → download da imagem → chamada OpenAI Vision API → resultado incorporado ao contexto → agente responde com análise visual.
+
 ---
 
 ### 📱 WhatsApp Bidirecional Reativo
+
 **Como funciona:** Webhook persistente recebe mensagens da Evolution API. O Normalizador Universal identifica automaticamente se a origem é Evolution, UAZAPI ou ZAPI — sem configuração manual. Redis aplica debounce em mensagens fracionadas. O sistema deduplica por event ID para garantia de entrega exactly-once.
 
 **Quando ativa:** Imediatamente ao receber qualquer mensagem no WhatsApp conectado. Latência P50: 7 segundos fim-a-fim.
@@ -136,6 +214,7 @@ O operador pergunta, o sistema responde com análise contextualizada usando hist
 ---
 
 ### ⏰ Monitor Proativo Autônomo (8h)
+
 **Como funciona:** Schedule Trigger executa automaticamente de segunda a sábado às 8h (`cron: 0 8 * * 1-6`). O sistema dispara fan-out paralelo para 7 fontes de dados: PostgreSQL (operações e documentos), Supabase (clientes, catálogo, histórico comercial, regiões estratégicas, concorrentes), Open-Meteo por GPS de cada região e AwesomeAPI para câmbio USD/BRL em tempo real. Os dados são consolidados, o score composto é calculado e o relatório executivo é entregue via WhatsApp + email.
 
 **Quando ativa:** Automaticamente às 8h, todo dia útil. Zero intervenção humana.
@@ -143,6 +222,7 @@ O operador pergunta, o sistema responde com análise contextualizada usando hist
 ---
 
 ### 🏗️ Motor de Inteligência Comercial
+
 **Como funciona:** Uma única query SQL com `COALESCE` + `json_agg` retorna 5 datasets em uma roundtrip ao PostgreSQL. Um engine JavaScript processa os dados em memória em menos de 50ms e classifica 4 tipos de oportunidade:
 - **Preço Favorável:** produto que o cliente já comprou caiu mais de 3% — acionar com oferta antecipada
 - **Antecipação Climática:** clima adverso previsto + cultivo sensível + produto relevante no histórico
@@ -154,6 +234,7 @@ O operador pergunta, o sistema responde com análise contextualizada usando hist
 ---
 
 ### 📋 Agente Analista Documental
+
 **Como funciona:** Sub-agente especializado em documentos agrícolas. Calcula score por documento com base na proximidade do vencimento:
 - Vencido = 40 pontos (CRÍTICO)
 - Vence em ≤7 dias = 35 pontos (ALTO)
@@ -167,31 +248,34 @@ Monitora: licenças ambientais, certificados fitossanitários, ART, CAR, registr
 ---
 
 ### 🌧️ Agente Monitor Climático
+
 **Como funciona:** Consulta Open-Meteo API usando as coordenadas GPS de cada região da carteira de clientes. Avalia precipitação acumulada, temperatura mínima e período de seca. Thresholds:
 - Precipitação > 60mm em 3 dias → risco ALTO
 - Precipitação > 100mm em 3 dias → risco CRÍTICO
 - Temperatura mínima < 5°C → risco de geada
 - Seca > 7 dias consecutivos → risco ALTO
 
-O resultado é integrado ao score composto de risco e às estratégias de oportunidades comerciais (ex: recomendar sistema de irrigação em período de seca).
+O resultado é integrado ao score composto de risco e às estratégias de oportunidades comerciais.
 
 **Quando ativa:** No ciclo proativo das 8h e em qualquer pergunta sobre clima ou risco por região.
 
 ---
 
 ### 💱 Agente Analista de Câmbio
+
 **Como funciona:** Consulta AwesomeAPI (dados do Banco Central do Brasil) para obter a cotação USD/BRL em tempo real. Avalia variação e tendência:
 - Variação > 1.5% em 24h → ALERTA
 - Variação > 2.5% em 24h → CRÍTICO
 - Alta por mais de 5 dias consecutivos → recomendação de hedge cambial
 
-O impacto cambial é integrado às propostas de insumos importados (fertilizantes, defensivos) e aos contratos de exportação.
+O impacto cambial é integrado às propostas de insumos importados e contratos de exportação.
 
 **Quando ativa:** No ciclo proativo das 8h e em qualquer pergunta sobre câmbio, preço de insumos ou exposição financeira.
 
 ---
 
 ### 📊 Agente de Monitoramento Proativo (Score Composto 0–100)
+
 **Como funciona:** Consolida os dados de todos os outros agentes em um score único por cliente/região. O score é calculado com 5 fatores ponderados:
 
 | Fator | Critério | Pontuação |
@@ -209,20 +293,23 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 ---
 
 ### 📧 Envio de Email Real (Gmail API)
+
 **Como funciona:** Gmail Tool integrada ao agente roteador via OAuth2 com escopo `gmail.send`. O modelo GPT-4.1-mini decide autonomamente quando acionar o envio com base no contexto — quando o operador pede "envie por email" ou quando o ciclo proativo gera relatório. O email é composto pelo próprio agente com formatação adequada para gestores.
 
-**Quando ativa:** (1) No ciclo proativo das 8h — email executivo enviado automaticamente. (2) No modo reativo — quando o operador solicitar explicitamente.
+**Quando ativa:** (1) No ciclo proativo das 9h — email executivo enviado automaticamente via WF05. (2) No modo reativo — quando o operador solicitar explicitamente.
 
 ---
 
 ### 📅 Alertas no Google Calendar
+
 **Como funciona:** Três Calendar Tools disponíveis ao agente: `create_event`, `update_event` e `cancel_event`. O agente cria eventos no calendário do operador para vencimentos documentais, visitas a clientes e marcos operacionais com base na análise de riscos.
 
-**Quando ativa:** No modo reativo, quando o operador solicitar criar alertas, ou quando o agente identificar situação que justifique um lembrete calendário.
+**Quando ativa:** No modo reativo, quando o operador solicitar criar alertas, ou quando o agente identificar situação que justifique um lembrete no calendário.
 
 ---
 
 ### 🧠 Memória Conversacional Persistente — 3 Camadas
+
 **Como funciona:** O sistema mantém contexto em três camadas com durações diferentes:
 
 | Camada | Tecnologia | Duração | O que armazena |
@@ -236,6 +323,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 ---
 
 ### 📊 Relatórios de Gestão e Rastreabilidade (WF05)
+
 **Como funciona:** Às 9h de cada dia útil, o WF05 busca todos os itens pendentes no Supabase e constrói um email HTML executivo completo com: cards de resumo (críticos, altos, médios, oportunidades, SLA vencido), cartões detalhados por item com ação recomendada e tabela completa. Paralelamente, envia flash executivo de 5 linhas via WhatsApp. Cada item tem rastreabilidade completa: `pendente → em_andamento → resolvido`.
 
 **Quando ativa:** Automaticamente às 9h todo dia útil. Independente do ciclo proativo das 8h.
@@ -243,6 +331,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 ---
 
 ### 👤 Onboarding Zero-Touch
+
 **Como funciona:** Quando um número de telefone ainda não cadastrado envia mensagem no WhatsApp, o sistema automaticamente cria o registro em `agroe_contexto` com `ai_service='active'`. Nenhuma configuração manual necessária — o sistema está operacional desde a primeira mensagem recebida.
 
 **Quando ativa:** Na primeira interação de qualquer novo número de telefone.
@@ -250,6 +339,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 ---
 
 ### 🔁 Escalada para Humano — Human-in-the-Loop (WF03)
+
 **Como funciona:** Quando o agente identifica score > 85, embargo documental, produtor irresponsivo há mais de 10 dias, ou o operador solicita explicitamente, o WF03 é acionado: a IA é pausada para aquele número (`ai_service=pause`), o responsável humano é notificado via WhatsApp com contexto completo, e a retomada é automática quando o status voltar para `active`. Compatível com Evolution API, UAZAPI e ZAPI.
 
 **Quando ativa:** Por decisão autônoma do agente (score >85 ou situação crítica) ou por solicitação explícita do operador.
@@ -257,6 +347,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 ---
 
 ### 🔌 Integração CRM/ERP Universal (WF06)
+
 **Como funciona:** Camada de integração com schema padronizado que conecta o agro-e a qualquer CRM ou ERP sem reescrever a lógica do agente. 5 conectores pré-configurados prontos para ativação:
 
 | Conector | Tipo | Para Ativar |
@@ -272,7 +363,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 
 ---
 
-## Stack Tecnológico
+## 🖥️ Stack Tecnológico
 
 | Componente | Tecnologia | Função |
 |---|---|---|
@@ -291,7 +382,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 
 ---
 
-## Proteção de Dados — LGPD
+## 🔒 Proteção de Dados — LGPD
 
 | Medida | Implementação | Base Legal |
 |---|---|---|
@@ -303,7 +394,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 
 ---
 
-## Técnicas de IA Implementadas — Nível Avançado
+## 🧪 Técnicas de IA Implementadas — Nível Avançado
 
 | Técnica | Implementação |
 |---|---|
@@ -319,7 +410,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 
 ---
 
-## Roadmap
+## 🗺️ Roadmap
 
 | Fase | Período | Entrega |
 |---|---|---|
@@ -330,7 +421,7 @@ Classificação: **CRÍTICO** >80 · **ALTO** 60–79 · **MÉDIO** 40–59 · *
 
 ---
 
-## Evidências
+## 🗂️ Evidências
 
 | Arquivo | Descrição |
 |---|---|
