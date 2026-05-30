@@ -71,7 +71,7 @@ O custo não é a falta de dados — é a falta de inteligência sobre os dados.
 
 ## 🌊 El Niño 2026 — O Grande Diferencial da Plataforma
 
-> **Esta é o destaque do sistema.** Com o monitoramento do El Niño em tempo real, cruzando com informações do histórico de clientes, o estoque e as oportunidades comerciais. Empresas com o AGRO-e compra em março o que vai faltar em setembro.
+> **Este é o destaque do sistema.** Com o monitoramento do El Niño em tempo real, cruzando com informações do histórico de clientes, o estoque e as oportunidades comerciais. Empresas com o AGRO-e compra em março o que vai faltar em setembro.
 
 ### O Cenário — Dados Oficiais NOAA/INMET/CPTEC
 
@@ -176,11 +176,11 @@ ALERTA: Seca prevista Cerrado por 14 dias
 
 ---
 
-## 🚀 AGRO-e V2 — O Que Está Sendo Construído
+## 🚀 AGRO-e V1 — O Que foi desenvolvido
 
-> As funcionalidades abaixo estão em desenvolvimento ativo. A arquitetura V1 em produção comprova que a base técnica está correta — o V2 é a evolução natural.
+>  A arquitetura da V1 comprova que a base técnica está correta e totalmente funcional.
 
-### Preview do Dashboard CRM V2
+### Preview do Dashboard CRM V1
 
 ![AGRO-e Intelligence · Dashboard CRM V2 Preview](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/assets/dashboard-v2-preview.png)
 
