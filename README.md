@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/logo_t.png" alt="AGRO-e Intelligence" width="320"/>
+<img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/logo_t.png" alt="AGRO-e Intelligence" width="300"/>
 
 <br/>
 
@@ -14,9 +14,9 @@
 <br/><br/>
 
 # AGRO-e Intelligence
-### Monitoramento Autônomo de Riscos, Oportunidades e Inteligência Comercial
+### Plataforma de Inteligência Autônoma para o Agronegócio
 
-**Plataforma de IA em operação real. Monitora documentos, El Niño, câmbio e preços de insumos de forma autônoma — entrega análise acionável via WhatsApp e email, antes que o problema vire perda.**
+**Monitoramento contínuo de riscos climáticos, documentais e financeiros — com identificação automática de oportunidades comerciais e entrega de análise acionável via WhatsApp e email, 24 horas por dia, todo dia útil.**
 
 <br/>
 
@@ -32,32 +32,33 @@
 |---|---|
 | 1 | [O Problema que Este Sistema Resolve](#-o-problema-que-este-sistema-resolve) |
 | 2 | [Evidências de Funcionamento em Produção](#-evidências-de-funcionamento-em-produção) |
-| **3** | [**🌊 El Niño 2026 — Monitoramento e Inteligência Estratégica**](#-el-niño-2026--monitoramento-e-inteligência-estratégica) |
-| 4 | [CRM · Painel de Controle](#-crm--painel-de-controle) |
-| 5 | [Todas as Capacidades](#-todas-as-capacidades) |
-| 6 | [Como o Sistema Opera](#-como-o-sistema-opera) |
-| 7 | [Arquitetura — 6 Workflows, 244 Nós](#-arquitetura--6-workflows-244-nós) |
-| 8 | [Funcionalidades Detalhadas](#-funcionalidades-detalhadas) |
-| 9 | [Stack Tecnológico](#-stack-tecnológico) |
-| 10 | [Proteção de Dados — LGPD](#-proteção-de-dados--lgpd) |
-| 11 | [Roadmap](#-roadmap) |
-| 12 | [Arquivos de Evidência](#-arquivos-de-evidência) |
+| 3 | [CRM · Painel de Controle](#-crm--painel-de-controle) |
+| **4** | [**🌡️ Monitor Climático Contínuo**](#️-monitor-climático-contínuo--5-regiões-em-tempo-real) |
+| **5** | [**🌊 El Niño 2026 — Inteligência Estratégica**](#-el-niño-2026--inteligência-estratégica) |
+| 6 | [Todas as Capacidades](#-todas-as-capacidades) |
+| 7 | [Como o Sistema Opera](#-como-o-sistema-opera) |
+| 8 | [Arquitetura — 6 Workflows, 244 Nós](#-arquitetura--6-workflows-244-nós) |
+| 9 | [Funcionalidades Detalhadas](#-funcionalidades-detalhadas) |
+| 10 | [Stack Tecnológico](#-stack-tecnológico) |
+| 11 | [Proteção de Dados — LGPD](#-proteção-de-dados--lgpd) |
+| 12 | [Roadmap](#-roadmap) |
+| 13 | [Arquivos de Evidência](#-arquivos-de-evidência) |
 
 ---
 
 ## 🌱 O Problema que Este Sistema Resolve
 
-Empresas do agronegócio com carteiras de 50 a 500 produtores operam com um risco estrutural que nenhuma planilha resolve: **informação crítica chega tarde, quando o dano já está feito.**
+Empresas do agronegócio com carteiras de 50 a 500 produtores convivem com um risco estrutural difícil de eliminar manualmente: **a velocidade com que dados relevantes se tornam decisões é insuficiente para o ritmo do mercado agrícola.**
 
-Um documento vencido bloqueia uma operação e custa entre R$50 mil e R$500 mil por incidente. Uma janela de preço favorável em fertilizante importado fecha em 48 horas — enquanto o câmbio deteriora. Um produtor de soja no Cerrado planta na época errada porque ninguém cruzou o dado climático com a janela agrícola. E com o El Niño 2026 confirmado com **90%+ de probabilidade a partir de agosto**, quem não se posicionou antes vai competir por insumos em falta com preços inflacionados.
+Um documento vencido interrompe uma operação e pode custar entre R$50 mil e R$500 mil por incidente. Uma queda de preço em fertilizante importado dura 48 horas enquanto o câmbio sobe — e sem monitoramento contínuo, a janela fecha antes de qualquer reunião de compras. Um veranico de 9 dias no Cerrado compromete a lavoura de um produtor que poderia ter sido avisado com antecedência suficiente para agir. Com o El Niño 2026 confirmado com 90%+ de probabilidade a partir de agosto, o risco de escassez de insumos específicos e deterioração acelerada de safras eleva o custo da inação a um patamar inédito.
 
-**O AGRO-e opera como um analista permanente.** Coleta 7 fontes de dados em paralelo, cruza com a carteira de clientes, calcula score de risco e entrega análise acionável — todo dia útil, às 8h, sem intervenção humana. A empresa que usa o AGRO-e adquire em março o que vai faltar em setembro.
+**O AGRO-e elimina a latência entre dado e decisão.** Opera como um analista permanente: coleta sete fontes de dados em paralelo, calcula score de risco por cliente, cruza clima, câmbio e preços de insumos, e entrega análise acionável antes do início do expediente — sem depender de nenhum gatilho humano.
 
 ---
 
 ## 📸 Evidências de Funcionamento em Produção
 
-> Sistema validado em ambiente de produção real. Todas as evidências foram capturadas em **29/05/2026** sem edição ou simulação.
+> Sistema validado em ambiente de produção real. Capturas realizadas em **29/05/2026**, sem edição ou simulação.
 
 👉 **[Acessar Relatório Completo de Evidências](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html)**
 
@@ -72,95 +73,110 @@ Um documento vencido bloqueia uma operação e custa entre R$50 mil e R$500 mil 
 
 ---
 
-## 🌊 El Niño 2026 — Monitoramento e Inteligência Estratégica
+## 🖥️ CRM · Painel de Controle
 
-O AGRO-e monitora o El Niño em tempo real, cruzando os índices climáticos oficiais com a carteira de clientes, o histórico de compras, os preços de insumos e a cotação do câmbio. O resultado não é apenas um alerta — é uma recomendação comercial específica com janela de ação.
+Interface web completa com dashboards em tempo real, cobrindo todos os times da operação — comercial, compras, financeiro, gestão de estoque e controle de riscos.
+
+![AGRO-e Intelligence · CRM Dashboard Premium](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/assets/dashboard-crm-preview.png)
+
+*Painel de controle com Monitor Climático por região (5 regiões em tempo real), Score de Risco por cliente, Radar de Oportunidades, Câmbio + Preços de Insumos, Estoque Estratégico, Timeline de execução autônoma e WhatsApp integrado.*
+
+**Módulos disponíveis no CRM:**
+
+| Área | Módulos |
+|---|---|
+| **CRM Comercial** | Carteira de Clientes · Cadastro · Pipeline de Vendas · Radar de Oportunidades · Histórico |
+| **Monitor de Riscos** | Análise de Riscos · Monitor Climático · El Niño 2026 · Monitor Câmbio · Documentos |
+| **Compras e Estoque** | Estoque Estratégico · Catálogo de Insumos · Preços de Mercado · Fornecedores |
+| **Financeiro** | Dashboard Financeiro · Análise de Margens |
+| **Automação** | WhatsApp · Emails e Alertas · Workflows n8n |
+
+---
+
+## 🌡️ Monitor Climático Contínuo · 5 Regiões em Tempo Real
+
+O monitoramento climático é uma função permanente do sistema — não está subordinado a eventos específicos. Dados meteorológicos são coletados via Open-Meteo API com coordenadas GPS de cada região da carteira, hora a hora, e processados a cada ciclo proativo.
+
+### O Que é Monitorado por Região
+
+Para cada região onde há produtores cadastrados, o sistema coleta e analisa:
+
+| Variável | Fonte | Frequência | Thresholds de Alerta |
+|---|---|---|---|
+| Precipitação acumulada (3d/7d) | Open-Meteo GPS | Horária | >60mm → ALTO · >100mm → CRÍTICO |
+| Temperatura máxima/mínima | Open-Meteo GPS | Horária | <5°C → risco de geada · >38°C → estresse hídrico |
+| Umidade relativa | Open-Meteo GPS | Horária | <30% → risco de incêndio · >90% → doenças fúngicas |
+| Período de seca | Open-Meteo GPS | Diária | >7 dias → ALTO · >14 dias → CRÍTICO |
+| Velocidade do vento | Open-Meteo GPS | Horária | >60 km/h → risco operacional |
+
+### Classificação de Risco Climático
+
+```
+CRÍTICO  — Ação imediata. Exemplo: 68mm/3d no Sul, seca 18 dias no Nordeste.
+ALTO     — Esta semana. Exemplo: veranico 9 dias no Cerrado, geada prevista RS.
+MODERADO — Este mês. Exemplo: umidade elevada favorecendo doenças fúngicas.
+POSITIVO — El Niño favorece produtividade nesta região. Oportunidade de expansão.
+```
+
+### Regiões Atualmente Monitoradas
+
+| Região | Bioma | Culturas | Condição Atual (30/05) |
+|---|---|---|---|
+| Sul (RS · SC · PR) | Pampa/Mata Atlântica | Soja · Trigo · Milho | 🔴 68mm/3d · risco enchente |
+| Cerrado · Matopiba (GO · MT) | Cerrado | Soja · Algodão | 🟠 Veranico 9 dias |
+| Sudeste (MG · SP) | Mata Atlântica/Cerrado | Cana · Café · Milho | 🟢 Condições favoráveis |
+| Nordeste (CE · PI · MA) | Caatinga/Semiárido | Sequeiro · Pecuária | 🔴 Seca 18 dias crítica |
+| Norte/Matopiba (PA · MA) | Amazônia/Cerrado | Soja expansão | 🟡 Monitoramento preventivo |
+
+### Como o Clima Gera Oportunidades Comerciais
+
+O sistema cruza automaticamente os dados climáticos com o histórico de compras de cada produtor:
+
+```
+ALERTA: Veranico 9 dias previsto Cerrado
++ HISTÓRICO: Carlos Mendes (450ha milho) sem sistema de irrigação
++ CATÁLOGO: Gotejamento disponível, margem de 38%
++ CÂMBIO: USD/BRL subindo → insumos importados mais caros em breve
+= OPORTUNIDADE: Proposta gotejamento para Carlos Mendes
+  Receita potencial: R$48.000 · Urgência: esta semana
+```
+
+---
+
+## 🌊 El Niño 2026 — Inteligência Estratégica
+
+O El Niño 2026 é monitorado como uma camada adicional sobre o sistema climático regular — amplificando alertas existentes e antecipando padrões de escassez de insumos que afetam toda a cadeia do agronegócio.
 
 ### Dados Oficiais — NOAA/CPC · INMET · CPTEC
 
-| Probabilidade | Período | Status Oficial |
+| Probabilidade | Período | Status |
 |---|---|---|
-| **82%** | Maio–Julho 2026 | 🟡 **El Niño Watch** (NOAA, 14/05/2026) |
+| **82%** | Maio–Julho 2026 | 🟡 El Niño Watch (NOAA, 14/05/2026) |
 | **90%+** | Agosto–Outubro 2026 | 🔴 Formação confirmada pelos modelos |
 | **96%** | Dezembro 2026–Fevereiro 2027 | 🔴 Persistência garantida |
 
-**ONI atual (Niño 3.4 SST): +0.47°C e subindo.** Próximo boletim NOAA: 11 de junho de 2026.
+**ONI atual (Niño 3.4 SST): +0.47°C e subindo.**
 
----
+### El Niño Integrado com Câmbio e Preços de Insumos
 
-### Como o Sistema Integra El Niño + Câmbio + Preços de Insumos
+O diferencial não está no alerta climático isolado — está no cruzamento com câmbio e preços:
 
-O monitoramento climático isolado não gera valor comercial. O AGRO-e cruza três dimensões simultaneamente:
-
-```
-NOAA ENSO (ONI index)          →  intensidade e probabilidade do fenômeno
-Open-Meteo por GPS da fazenda  →  impacto localizado por região e cultura
-AwesomeAPI / BCB (USD/BRL)     →  pressão cambial sobre insumos importados
-Catálogo de preços (Supabase)  →  janela atual de oportunidade por produto
-Histórico de compras (Postgres) →  perfil do cliente e necessidade real
-```
-
-**O sistema identifica automaticamente:**
-
-- Produtos que terão escassez durante o pico do El Niño, com janela de compra antecipada
-- Clientes vulneráveis por região e cultura — com score de risco atualizado diariamente
-- Oportunidades de antecipação: insumos em queda de preço + câmbio subindo = janela crítica
-- Recomendação de estoque estratégico por produto, com urgência e receita potencial
-
----
-
-### Impactos por Região — O Que o Sistema Monitora e Recomenda
-
-#### 🔴 Região Sul (RS · SC · PR) — Excesso de Chuva
-
-| Alerta | Situação | Ação Gerada pelo Sistema |
-|---|---|---|
-| CRÍTICO | Precipitação >100mm em 3 dias | Alerta imediato ao produtor + notificação ao operador |
-| ALTO | 60–100mm · Colheita em risco | Antecipar logística; proposta de seguro agrícola |
-| ESTOQUE | Fungicidas com escassez prevista Jul–Set | Comprar agora enquanto preço está favorável |
-
-#### 🟠 Cerrado · Matopiba (GO · MT · MS) — Veranico e Câmbio
-
-| Alerta | Situação | Ação Gerada pelo Sistema |
-|---|---|---|
-| ALTO | Veranico Jan–Fev · janela de plantio reduzida | Proposta de irrigação gotejamento (demanda explosiva) |
-| ALTO | MAP/Ureia em queda + câmbio subindo | Janela de 48–72h para compra antecipada com margem |
-| MODERADO | Câmbio +1.8%/24h · fertilizantes importados | Alerta cambial + projeção de impacto por cliente |
-
-#### 🔴 Nordeste · Norte (CE · PI · MA · PA) — Seca Severa
-
-| Alerta | Situação | Ação Gerada pelo Sistema |
-|---|---|---|
-| CRÍTICO | Seca prolongada 2º semestre | Escalada para responsável humano |
-| CRÍTICO | Pecuária: silagem esgotada antes do fim do ano | Janela de contratação de forragem fecha em julho |
-| ALTO | Bombas e cisternas em escassez prevista | Estoque estratégico antes do pico de demanda |
-
----
-
-### Monitoramento de Preços de Insumos — Integrado ao El Niño e Câmbio
-
-O sistema monitora o catálogo de preços em tempo real e cruza com o contexto El Niño:
-
-| Insumo | Variação Atual | Contexto El Niño + Câmbio | Recomendação |
+| Insumo | Preço Atual | Contexto El Niño + Câmbio | Recomendação |
 |---|---|---|---|
-| MAP Fertilizante | −7.8% | Câmbio +1.8%/24h · reversão iminente | **Comprar imediatamente** |
-| KCL Cloreto Potássio | −7.0% | Demanda Cerrado vai subir com irrigação | **Comprar esta semana** |
-| Glifosato 480 SC | −9.2% | Preço mínimo do ciclo | **Oportunidade imediata** |
-| Ureia Granulada | −5.7% | Câmbio sobe → preço sobe | **Janela: 48–72h** |
-| Fungicida Elatus | +10.4% ⚠ | Escassez prevista Sul · El Niño | **Estocar antes de julho** |
-| Sistema Gotejamento | +12% ⚠ | Demanda vai explodir Jul–Ago | **Proposta antecipada** |
+| MAP Fertilizante | −7.8% | Câmbio +1.8%/24h · reversão iminente | **Comprar — janela de 48h** |
+| KCL Cloreto Potássio | −7.0% | Demanda Cerrado sobe com irrigação | **Comprar — esta semana** |
+| Glifosato 480 SC | −9.2% | Preço mínimo do ciclo atual | **Oportunidade imediata** |
+| Fungicida Elatus | +10.4% ⚠ | Escassez prevista Sul · El Niño + chuva | **Estocar antes de julho** |
+| Sistema Gotejamento | +12% ⚠ | Demanda explosiva Jul–Ago no Cerrado | **Proposta antecipada** |
 
-> **A empresa que usa o AGRO-e fecha negócio em março com o insumo que vai faltar em setembro.** Isso não é análise retrospectiva — é posicionamento estratégico com dados em tempo real.
+### Estratégias por Região · El Niño 2026
 
----
-
-## 🖥️ CRM · Painel de Controle
-
-Interface web completa com dashboards em tempo real — monitor El Niño, score de risco por cliente, radar de oportunidades, cotação de câmbio e preços de insumos integrados.
-
-![AGRO-e Intelligence · CRM Dashboard — El Niño Monitor, Score de Risco, Radar de Oportunidades](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/assets/dashboard-crm-preview.png)
-
-*Painel de controle com monitor El Niño (ONI gauge em tempo real), score de risco composto por cliente, radar de oportunidades com preços de insumos, câmbio USD/BRL e timeline de execução autônoma.*
+| Região | Impacto El Niño | Ação Estratégica | Urgência |
+|---|---|---|---|
+| Sul (RS/SC/PR) | Excesso de chuva · doenças fúngicas | Estocar fungicidas antes da escassez Jul–Set | CRÍTICO |
+| Cerrado · GO/MT | Veranico Jan–Fev · janela de plantio curta | Proposta irrigação gotejamento antes de Dez | ALTO |
+| Nordeste | Seca severa 2º semestre | Forragem e silagem: janela fecha em julho | CRÍTICO |
+| Sudeste | Inverno menos frio · pragas favorecidas | Monitoramento reforçado · inseticidas | MODERADO |
 
 ---
 
@@ -168,17 +184,17 @@ Interface web completa com dashboards em tempo real — monitor El Niño, score 
 
 | # | Capacidade | Tecnologia | Quando Ativa |
 |---|---|---|---|
-| ★ 1 | **🌊 Monitor El Niño · NOAA/CPTEC** | ENSO API + score multiplier | Diariamente · ciclo proativo 8h |
-| ★ 2 | **📦 Estoque Estratégico · Escassez Prevista** | El Niño + catálogo + câmbio | Proativo + consulta reativa |
-| ★ 3 | **💱 Câmbio USD/BRL · Impacto Insumos** | AwesomeAPI/BCB real-time | Contínuo · alerta >1.5% |
-| ★ 4 | **🎙️ Áudio — Transcrição por Voz** | OpenAI Whisper | Ao receber mensagem de voz |
-| ★ 5 | **📄 Documentos — Leitura e Análise** | PDF Extract + Injeção de Contexto | Ao receber PDF/documento |
-| ★ 6 | **🖼️ Imagens — Visão Computacional** | OpenAI Vision | Ao receber foto/imagem |
-| 7 | 📱 WhatsApp Bidirecional | Evolution API + Redis | Ao receber qualquer mensagem |
-| 8 | ⏰ Monitor Proativo Autônomo | Cron 8h seg–sáb | Automaticamente · 7 fontes |
-| 9 | 🏗️ Motor de Inteligência Comercial | SQL + JS Engine · 4 tipos | Ciclo proativo + consulta |
-| 10 | 📋 Agente Analista Documental | Score 0–40pts · WF04 | Proativo + menção documentos |
-| 11 | 🌧️ Agente Monitor Climático | Open-Meteo por GPS | Proativo + consulta regional |
+| ★ 1 | **🌡️ Monitor Climático Contínuo** | Open-Meteo GPS · 5 regiões | Horária + ciclo proativo 8h |
+| ★ 2 | **🌊 El Niño NOAA/CPTEC** | ENSO API + score multiplier | Diariamente · ciclo proativo 8h |
+| ★ 3 | **📦 Estoque Estratégico** | El Niño + câmbio + catálogo | Proativo + consulta reativa |
+| ★ 4 | **💱 Câmbio USD/BRL** | AwesomeAPI/BCB real-time | Contínuo · alerta >1.5% |
+| ★ 5 | **🎙️ Áudio — Transcrição** | OpenAI Whisper | Ao receber mensagem de voz |
+| ★ 6 | **📄 Documentos — IDP** | PDF Extract + Context Injection | Ao receber PDF/documento |
+| ★ 7 | **🖼️ Imagens — Computer Vision** | OpenAI Vision | Ao receber foto/imagem |
+| 8 | 📱 WhatsApp Bidirecional | Evolution API + Redis | Ao receber qualquer mensagem |
+| 9 | ⏰ Monitor Proativo 8h | Cron · 7 fontes | Automaticamente · sem intervenção |
+| 10 | 🏗️ Motor de Inteligência Comercial | SQL + JS Engine · 4 tipos | Ciclo proativo + consulta |
+| 11 | 📋 Agente Analista Documental | Score 0–40pts · WF04 | Proativo + menção a documentos |
 | 12 | 📊 Score Composto de Risco 0–100 | 5 fatores + multiplicador El Niño | Ciclo proativo 8h |
 | 13 | 📧 Email Real via Gmail API | Gmail OAuth2 + Tool Calling | Proativo 9h + solicitação |
 | 14 | 📅 Alertas Google Calendar | Google Calendar OAuth2 | Solicitação reativa |
@@ -196,14 +212,14 @@ Interface web completa com dashboards em tempo real — monitor El Niño, score 
 `cron: 0 8 * * 1-6` — zero intervenção humana
 
 ```
-08:00 → Fan-out paralelo: Postgres + Supabase + NOAA ENSO + Open-Meteo + AwesomeAPI/BCB
-08:03 → Score composto + multiplicador El Niño + análise de câmbio + preços insumos
+08:00 → Fan-out paralelo: Postgres + Supabase + NOAA ENSO + Open-Meteo (5 regiões) + AwesomeAPI/BCB
+08:03 → Score climático por região + multiplicador El Niño + análise de câmbio + preços insumos
 08:05 → 5 sub-agentes: Documental, Climático, Câmbio, Proativo, Comercial
 08:15 → WhatsApp + Email HTML executivo + Relatório salvo no Supabase
 ```
 
 ### Modo Reativo — Conversacional
-Texto · áudio · imagem · documento — qualquer mídia enviada pelo WhatsApp. Latência P50: 7 segundos.
+Texto · áudio · imagem · documento. Qualquer mídia enviada pelo WhatsApp. Latência P50: 7 segundos.
 
 ---
 
@@ -216,20 +232,20 @@ Texto · áudio · imagem · documento — qualquer mídia enviada pelo WhatsApp
 │            └─ Texto · Áudio (Whisper) · Imagem (Vision) · PDF (Extract)  │
 │                                                                           │
 │  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                    │
-│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo · AwesAPI  │
+│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo 5 regiões  │
+│               AwesomeAPI/BCB · Score climático · Multiplicador El Niño   │
 └───────────────────────────────┬──────────────────────────────────────────┘
                                 │
 ┌───────────────────────────────▼──────────────────────────────────────────┐
 │             WF02 — CONSOLE MULTI-AGENTES (31 nós)                        │
 │                                                                           │
-│  Agente Roteador (GPT-4.1-mini · Postgres Chat Memory)                   │
-│  ├── Think Tool × 2          (raciocínio explícito e auditável)          │
-│  ├── agente_elnino_monitor       → NOAA ENSO + câmbio + preços insumos  │
-│  ├── agente_analista_documental  → score 0–40pts                         │
-│  ├── agente_monitor_climatico    → Open-Meteo por GPS                    │
-│  ├── agente_analista_cambio      → AwesomeAPI USD/BRL                    │
+│  Agente Roteador (GPT-4.1-mini · Postgres Chat Memory · Think Tool × 2)  │
+│  ├── agente_monitor_climatico     → Open-Meteo GPS · 5 regiões           │
+│  ├── agente_elnino_monitor        → NOAA ENSO · impacto por região       │
+│  ├── agente_analista_cambio       → AwesomeAPI USD/BRL · insumos         │
+│  ├── agente_analista_documental   → score 0–40pts · SLA tracking         │
 │  ├── agente_monitoramento_autonomo → score composto 0–100                │
-│  ├── agente_inteligencia_comercial → 4 tipos + El Niño opportunities     │
+│  ├── agente_inteligencia_comercial → 4 tipos de oportunidade             │
 │  ├── Google Calendar × 3 tools   → alertas automáticos                  │
 │  └── encaminhar_responsavel_humano → WF03                                │
 └──────────┬──────────────┬───────────────┬───────────────┬────────────────┘
@@ -245,39 +261,39 @@ Texto · áudio · imagem · documento — qualquer mídia enviada pelo WhatsApp
 
 ## 📖 Funcionalidades Detalhadas
 
-### 🌊 Monitor El Niño NOAA/CPTEC — Em Tempo Real
+### 🌡️ Monitor Climático Contínuo — Open-Meteo GPS por Região
 
-**Como funciona:**
-1. Consulta diária à NOAA/CPC ENSO API para obter o ONI (Oceanic Niño Index) — índice oficial de temperatura superficial do mar
-2. Cruza com previsões do INMET e CPTEC para impacto regional por bioma
-3. Para cada cliente da carteira, calcula multiplicador de risco El Niño com base em: região, cultura cultivada, fase agrícola e vulnerabilidade histórica
-4. Integra com cotação USD/BRL em tempo real para calcular impacto nos preços de insumos importados
-5. Gera recomendações específicas de estoque estratégico com janela de ação e receita potencial
+**Como funciona:** Consulta Open-Meteo API usando as coordenadas GPS de cada região da carteira de clientes, com atualização horária. Para cada região, coleta precipitação acumulada (3 e 7 dias), temperatura máxima/mínima, umidade relativa, período de seca e velocidade do vento.
 
-**Classificação de alertas:**
-```
-CRÍTICO  — Ação imediata. Escalada para responsável humano se necessário.
-ALTO     — Esta semana. Abordagem ao produtor com proposta preventiva.
-MODERADO — Este mês. Posicionamento de estoque e planejamento.
-POSITIVO — El Niño favorece esta região/cultura. Oportunidade de expansão.
-```
+No ciclo proativo das 8h, os dados de todas as regiões são consolidados em um score climático regional que alimenta o score composto de risco por cliente. O agente cruza automaticamente com o histórico de compras para identificar oportunidades de antecipação.
 
-**Quando ativa:** Diariamente no ciclo proativo 8h e em toda consulta reativa sobre clima, estoque ou câmbio.
+**Thresholds:**
+- Precipitação >60mm/3d → ALTO · >100mm → CRÍTICO
+- Temperatura <5°C → risco de geada · >38°C → estresse hídrico
+- Umidade <30% → risco de incêndio · >90% → doenças fúngicas
+- Seca >7 dias → ALTO · >14 dias → CRÍTICO
+
+**Quando ativa:** Coleta horária via Open-Meteo. Processamento e alertas no ciclo proativo 8h e em qualquer consulta reativa sobre clima.
 
 ---
 
-### 💱 Agente Analista de Câmbio — Integrado ao El Niño
+### 🌊 El Niño NOAA/CPTEC — Camada Estratégica Adicional
 
-**Como funciona:** Consulta AwesomeAPI (Banco Central do Brasil) para cotação USD/BRL em tempo real. Cruza com o catálogo de insumos importados e calcula impacto por produto:
+**Como funciona:** Consulta diária à NOAA/CPC ENSO API para o ONI (Oceanic Niño Index). Cruza com previsões do INMET e CPTEC por bioma. Calcula multiplicador de risco El Niño por cliente com base em região, cultura cultivada, fase agrícola e ONI atual. Integra com cotação USD/BRL para calcular impacto nos preços de insumos importados.
 
-```
-Variação >1.5%/24h → ALERTA: notifica sobre pressão nos fertilizantes importados
-Variação >2.5%/24h → CRÍTICO: recomendação de antecipação de compra
-Alta >5 dias consecutivos → Recomendação de hedge para exportadores
-El Niño + Câmbio subindo → Janela dupla: preço atual baixo vai reverter
-```
+**Quando ativa:** Diariamente no ciclo proativo 8h. Integrado a toda consulta climática, de câmbio ou de estoque.
 
-**Quando ativa:** Ciclo proativo 8h e qualquer consulta financeira ou sobre preços.
+---
+
+### 💱 Câmbio USD/BRL — Integrado ao Clima e Insumos
+
+**Thresholds:**
+- Variação >1.5%/24h → ALERTA: pressão sobre fertilizantes importados
+- Variação >2.5%/24h → CRÍTICO: antecipação de compra recomendada
+- Alta >5 dias consecutivos → recomendação de hedge para exportadores
+- Câmbio sobe + insumo cai → janela dupla identificada automaticamente
+
+**Quando ativa:** Ciclo proativo 8h e qualquer consulta sobre preços ou financeiro.
 
 ---
 
@@ -285,9 +301,9 @@ El Niño + Câmbio subindo → Janela dupla: preço atual baixo vai reverter
 
 ```
 1. Preço Favorável + Câmbio:   insumo caiu >3% mas câmbio sobe → janela se fecha
-2. Antecipação Climática:      clima adverso previsto + produto relevante no histórico
-3. Expansão Estratégica:       presença baixa + fraqueza do concorrente identificada
-4. Risco de Churn:             cliente sem compra >120 dias + El Niño pode acelerar saída
+2. Antecipação Climática:      alerta regional ativo + produto relevante no histórico
+3. Expansão Estratégica:       região com baixa presença + fraqueza do concorrente
+4. Risco de Churn:             >120 dias sem compra + pressão climática ou cambial
 ```
 
 ---
@@ -300,21 +316,10 @@ El Niño + Câmbio subindo → Janela dupla: preço atual baixo vai reverter
 | Chamados abertos | 7pts por chamado crítico | Máx 20pts |
 | Histórico de atrasos | `historico_atrasos=true` | 15pts fixos |
 | Exposição cambial | Crítica=15 · Alta=8 · Média=3 | Máx 15pts |
-| Risco climático | >100mm=10 · >60mm=7 | Máx 10pts |
+| Risco climático | >100mm=10 · >60mm=7 · Seca >14d=8 | Máx 10pts |
 | **Multiplicador El Niño** | **Região × Cultura × ONI × Fase agrícola** | **+0–30%** |
 
 **Classificação:** CRÍTICO >80 · ALTO 60–79 · MÉDIO 40–59 · BAIXO <40
-
----
-
-### 🎙️ Áudio · 📄 Documentos · 🖼️ Imagens
-
-O Normalizador Universal do WF01 identifica o tipo de mídia e processa automaticamente:
-- **Áudio** → Whisper ASR → texto → pipeline padrão
-- **PDF/Documento** → extração de texto → injeção no contexto → análise pelo agente
-- **Imagem** → OpenAI Vision → interpretação visual → incorporada à resposta
-
-Nenhuma configuração necessária. Transparente para o operador.
 
 ---
 
@@ -326,14 +331,14 @@ Nenhuma configuração necessária. Transparente para o operador.
 | LLM / IA | GPT-4.1-mini (OpenAI) | Motor de análise multi-agente |
 | ASR | OpenAI Whisper | Transcrição de áudios WhatsApp |
 | Vision | OpenAI Vision | Análise de imagens WhatsApp |
-| ENSO Monitor | NOAA/CPC + INMET + CPTEC | El Niño em tempo real |
-| Câmbio | AwesomeAPI / Banco Central | USD/BRL real-time |
+| Monitor Climático | Open-Meteo API (gratuita) | GPS por região · atualização horária |
+| Monitor ENSO | NOAA/CPC + INMET + CPTEC | El Niño · ONI index em tempo real |
+| Câmbio | AwesomeAPI / Banco Central | USD/BRL real-time · impacto por insumo |
 | Banco de Dados | Supabase + PostgreSQL | 15 tabelas · RLS · Views |
 | Memória Rápida | Redis (TTL 1h) | Debounce + contexto de sessão |
 | WhatsApp | Evolution API | Canal bidirecional multimodal |
 | Email | Gmail OAuth2 | Relatórios executivos |
 | Calendário | Google Calendar OAuth2 | Alertas automáticos |
-| Clima | Open-Meteo API (gratuita) | Dados GPS por região da carteira |
 
 ---
 
@@ -343,7 +348,7 @@ Nenhuma configuração necessária. Transparente para o operador.
 |---|---|---|
 | Row Level Security | RLS em todas as tabelas com dados pessoais | Art. 46 LGPD |
 | Anonimização SQL | `agroe_anonimiza_telefone()` · `agroe_anonimiza_nome()` | Art. 12 LGPD |
-| Retenção mínima | Chat: 90d · Logs: 180d · Execuções: 365d · limpeza automática | Art. 15 LGPD |
+| Retenção mínima | Chat: 90d · Logs: 180d · Execuções: 365d | Art. 15 LGPD |
 | Audit Trail | `agroe_lgpd_acesso_log` — todas as operações com dados pessoais | Art. 37 LGPD |
 | Anti-injection | 7 system prompts com proteção contra manipulação | Segurança |
 
@@ -355,7 +360,7 @@ Nenhuma configuração necessária. Transparente para o operador.
 |---|---|---|
 | **Fase 1** — Dados Reais | Meses 1–2 | Integração ERP/CRM real · calibração de scores com histórico operacional |
 | **Fase 2** — RAG Semântico | Meses 2–3 | pgvector + Supabase · busca em contratos e documentos históricos |
-| **Fase 3** — Aprendizado Contínuo | Meses 3–4 | Feedback loop · pesos do score ajustados automaticamente por região e cultivo |
+| **Fase 3** — Aprendizado Contínuo | Meses 3–4 | Feedback loop · pesos do score ajustados automaticamente por região |
 | **Fase 4** — Multi-Tenant SaaS | Meses 4–6 | Isolamento de dados · billing · API REST · múltiplas empresas |
 
 ---
@@ -365,9 +370,9 @@ Nenhuma configuração necessária. Transparente para o operador.
 | Arquivo | Descrição |
 |---|---|
 | [Relatório HTML Interativo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html) | Evidências completas — prints WhatsApp, emails, log execuções, motor comercial |
-| [Relatório PDF](evidencias/agroe-evidencias.pdf) | Versão PDF do relatório de evidências |
+| [Relatório PDF](evidencias/agroe-evidencias.pdf) | Versão PDF do relatório |
 | [Documentação Técnica e Comercial](evidencias/agroe-documentacao-tecnica-comercial-_maio26.pdf) | 11 páginas · produto completo |
-| [CRM Dashboard Preview](assets/dashboard-crm-preview.png) | Painel de controle com El Niño Monitor e radar de oportunidades |
+| [CRM Dashboard Preview](assets/dashboard-crm-preview.png) | Painel de controle premium — todos os módulos |
 
 ---
 
@@ -377,6 +382,6 @@ Nenhuma configuração necessária. Transparente para o operador.
 
 André Fernandes · Maio 2026
 
-*Sistema em operação real · Pronto para produção · El Niño 2026 monitorado · Escalável · IP protegido*
+*Em operação real · Pronto para produção · El Niño 2026 monitorado · Escalável · IP protegido*
 
 </div>
