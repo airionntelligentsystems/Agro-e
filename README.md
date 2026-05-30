@@ -186,7 +186,7 @@ O diferencial não está no alerta climático isolado — está no cruzamento co
 |---|---|---|---|
 | ★ 1 | **🌡️ Monitor Climático Contínuo** | Open-Meteo GPS · 5 regiões | Horária + ciclo proativo 8h |
 | ★ 2 | **🌊 El Niño NOAA/CPTEC** | ENSO API + score multiplier | Diariamente · ciclo proativo 8h |
-| ★ 3 | **📦 Estoque Estratégico** | El Niño + câmbio + catálogo | Proativo + consulta reativa |
+| ★ 3 | **📦 Estoque Estratégico** | El Niño + câmbio + catálogo | Autônomo + consulta reativa |
 | ★ 4 | **💱 Câmbio USD/BRL** | AwesomeAPI/BCB real-time | Contínuo · alerta >1.5% |
 | ★ 5 | **🎙️ Áudio — Transcrição** | OpenAI Whisper | Ao receber mensagem de voz |
 | ★ 6 | **📄 Documentos — IDP** | PDF Extract + Context Injection | Ao receber PDF/documento |
@@ -208,7 +208,7 @@ O diferencial não está no alerta climático isolado — está no cruzamento co
 
 ## 🔄 Como o Sistema Opera
 
-### Modo Proativo — Autônomo (8h)
+### Modo Autônomo (8h)
 `cron: 0 8 * * 1-6` — zero intervenção humana
 
 ```
@@ -230,15 +230,15 @@ Texto · áudio · imagem · documento. Qualquer mídia enviada pelo WhatsApp. L
 │             WF01 — ENTRADA + MONITOR PROATIVO (133 nós)                  │
 │  REATIVO:  WhatsApp → Evolution API → Normalizador Universal → WF02      │
 │            └─ Texto · Áudio (Whisper) · Imagem (Vision) · PDF (Extract)  │
-│                                                                           │
-│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                    │
-│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo 5 regiões  │
+│                                                                          │
+│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                     │
+│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo 5 regiões   │
 │               AwesomeAPI/BCB · Score climático · Multiplicador El Niño   │
 └───────────────────────────────┬──────────────────────────────────────────┘
                                 │
 ┌───────────────────────────────▼──────────────────────────────────────────┐
 │             WF02 — CONSOLE MULTI-AGENTES (31 nós)                        │
-│                                                                           │
+│                                                                          │
 │  Agente Roteador (GPT-4.1-mini · Postgres Chat Memory · Think Tool × 2)  │
 │  ├── agente_monitor_climatico     → Open-Meteo GPS · 5 regiões           │
 │  ├── agente_elnino_monitor        → NOAA ENSO · impacto por região       │
@@ -246,7 +246,7 @@ Texto · áudio · imagem · documento. Qualquer mídia enviada pelo WhatsApp. L
 │  ├── agente_analista_documental   → score 0–40pts · SLA tracking         │
 │  ├── agente_monitoramento_autonomo → score composto 0–100                │
 │  ├── agente_inteligencia_comercial → 4 tipos de oportunidade             │
-│  ├── Google Calendar × 3 tools   → alertas automáticos                  │
+│  ├── Google Calendar × 3 tools   → alertas automáticos                   │
 │  └── encaminhar_responsavel_humano → WF03                                │
 └──────────┬──────────────┬───────────────┬───────────────┬────────────────┘
            │              │               │               │
@@ -293,7 +293,7 @@ No ciclo proativo das 8h, os dados de todas as regiões são consolidados em um 
 - Alta >5 dias consecutivos → recomendação de hedge para exportadores
 - Câmbio sobe + insumo cai → janela dupla identificada automaticamente
 
-**Quando ativa:** Ciclo proativo 8h e qualquer consulta sobre preços ou financeiro.
+**Quando ativa:** Ciclo autônomo 8h e qualquer consulta sobre preços ou financeiro.
 
 ---
 
@@ -382,6 +382,6 @@ No ciclo proativo das 8h, os dados de todas as regiões são consolidados em um 
 
 André Fernandes · Maio 2026
 
-*Em operação real · Pronto para produção · El Niño 2026 monitorado · Escalável · IP protegido*
+* Pronto para operação real · Pronto para produção · El Niño 2026 monitorado · Escalável · IP protegido*
 
 </div>
