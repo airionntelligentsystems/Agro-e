@@ -71,7 +71,7 @@ O custo não é a falta de dados — é a falta de inteligência sobre os dados.
 
 ## 🌊 El Niño 2026 — O Grande Diferencial da Plataforma
 
-> **Esta é a cereja do sistema.** Nenhum concorrente está monitorando El Niño em tempo real e cruzando com a carteira de clientes, o estoque e as oportunidades comerciais. Quem tem o AGRO-e compra em março o que vai faltar em setembro.
+> **Esta é o destaque do sistema.** Com o monitoramento do El Niño em tempo real, cruzando com informações do histórico de clientes, o estoque e as oportunidades comerciais. Empresas com o AGRO-e compra em março o que vai faltar em setembro.
 
 ### O Cenário — Dados Oficiais NOAA/INMET/CPTEC
 
