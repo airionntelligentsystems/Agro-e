@@ -42,7 +42,7 @@
 | 10 | [Stack Tecnológico](#️-stack-tecnológico) |
 | 11 | [Proteção de Dados — LGPD](#-proteção-de-dados--lgpd) |
 | 12 | [Roadmap](#-roadmap) |
-| 13 | [Evidências — Todos os Arquivos](#-evidências--todos-os-arquivos) |
+| 13 | [Documentação e Referência Técnica](#️-documentação-e-referência-técnica) |
 
 ---
 
@@ -287,41 +287,25 @@ Antes da arquitetura técnica, o fluxo de inteligência:
 
 ## 📸 Evidências de Funcionamento em Produção
 
-> Sistema validado em ambiente de produção real. Capturas realizadas em **29/05/2026**, sem edição ou simulação.
+> Sistema validado em ambiente de produção real. Todas as evidências — conversas reais no WhatsApp, emails entregues na inbox, prints reais dos 6 workflows no n8n, diagrama de arquitetura, log de execuções, motor comercial e documentação técnica completa — estão centralizadas em uma página dedicada.
 
-👉 **[Acessar Relatório Completo de Evidências](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html)**
+<div align="center">
 
-### WhatsApp — Canal em Operação Real
+### 👉 [Acessar a Página Completa de Evidências](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html)
 
-| | |
+</div>
+
+A página de evidências reúne, em um só lugar:
+
+| Evidência | Conteúdo |
 |---|---|
-| ![WhatsApp — Análise de Risco Composto](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp1.jpeg) | ![WhatsApp — Motor de Inteligência Comercial](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp2.jpeg) |
-| *Análise de risco composto entregue via WhatsApp em produção real* | *Motor de inteligência comercial — 14 oportunidades identificadas* |
-| ![WhatsApp — Ciclo Proativo das 8h](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp3.jpeg) | ![WhatsApp — Processamento Multimodal](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp4.jpeg) |
-| *Ciclo proativo autônomo das 8h — relatório entregue sem intervenção* | *Processamento multimodal — áudio transcrito e respondido em 7s* |
-
-### Email — Relatório Executivo na Inbox
-
-![Relatório Executivo enviado via Gmail OAuth2 — recebido na inbox real](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/email3.jpeg)
-
-*Email HTML executivo enviado via Gmail OAuth2 — confirmado na inbox. Envio real, não simulado.*
-
-### Workflows — Arquitetura de Execução
-
-**WF01 · Entrada WhatsApp + Monitor Proativo (133 nós)**
-
-![WF01 — Entrada e Monitor Proativo](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/docs/prints/wf01-entrada-monitor-proativo.svg)
-
-**WF02 · Console Multi-Agentes (31 nós)**
-
-![WF02 — Console Multi-Agentes](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/docs/prints/wf02-console-multiagentes.svg)
-
-**WF03 · Escalada para Humano · WF04 · Monitor Documental · WF05 · Relatório · WF06 · CRM/ERP**
-
-![WF03 — Escalada Humana](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/docs/prints/wf03-escalada-humano.svg)
-![WF04 — Monitor de Vencimentos](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/docs/prints/wf04-monitor-vencimentos.svg)
-![WF05 — Relatório de Gestão](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/docs/prints/wf05-relatorio-gestao.svg)
-![WF06 — Integração CRM/ERP](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/docs/prints/wf06-integracao-crm-erp.svg)
+| 📱 **WhatsApp Real** | Conversa completa em produção — saudação, oportunidades, riscos climáticos e cambiais, estratégia integrada |
+| 📧 **Emails Entregues** | Relatórios proativos diários autônomos + email de estratégia despachado pelo agente, recebidos na inbox |
+| 🔧 **Workflows no n8n** | Capturas reais dos 6 workflows publicados — WF01 a WF06 — direto do editor n8n |
+| 🏗️ **Arquitetura em Operação** | Diagrama técnico da topologia completa dos 244 nós |
+| ⚡ **Log de Execuções** | Amostra de execuções reais via API n8n, todas com status `success` |
+| 💰 **Motor Comercial** | Saída real do engine sobre dados do banco — R$ 1.562.000+ em oportunidades |
+| 📄 **Documentação Técnica** | Documento técnico-comercial completo de 11 páginas em PDF |
 
 ---
 
@@ -483,30 +467,23 @@ Cada execução gera um `execucao_id` único. O histórico é salvo no Supabase 
 
 ---
 
-## 🗂️ Evidências — Todos os Arquivos
+## 🗂️ Documentação e Referência Técnica
 
-| Arquivo | Descrição |
+Todas as **evidências de funcionamento** (prints de WhatsApp, emails, capturas reais dos workflows, log de execuções, motor comercial e documentação técnica em PDF) estão reunidas na página dedicada:
+
+<div align="center">
+
+### 👉 [Página Completa de Evidências](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html)
+
+</div>
+
+Referência técnica complementar disponível no repositório:
+
+| Documento | Descrição |
 |---|---|
-| [Relatório HTML Interativo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html) | Evidências completas — prints WhatsApp, emails, log de execuções, motor comercial |
-| [Relatório de Evidências PDF](evidencias/agroe-evidencias.pdf) | Versão PDF do relatório completo de evidências |
-| [Relatório de Email Enviado (PDF)](docs/evidencias/relatorio-email-real-27052026.pdf) | PDF do relatório executivo real recebido na inbox |
-| [Relatório de Gestão (HTML)](docs/evidencias/relatorio-gestao-email.html) | Email HTML executivo gerado pelo sistema |
-| [Execuções Reais Documentadas](docs/evidencias/execucoes-reais.md) | Log detalhado de execuções com IDs e resultados |
-| [WF01 — Entrada + Monitor Proativo](docs/prints/wf01-entrada-monitor-proativo.svg) | Diagrama do workflow de entrada e ciclo proativo |
-| [WF02 — Console Multi-Agentes](docs/prints/wf02-console-multiagentes.svg) | Diagrama do console de orquestração dos agentes |
-| [WF03 — Escalada Humana](docs/prints/wf03-escalada-humano.svg) | Diagrama do workflow de escalada HITL |
-| [WF04 — Monitor Documental](docs/prints/wf04-monitor-vencimentos.svg) | Diagrama do monitor de vencimentos |
-| [WF05 — Relatório de Gestão](docs/prints/wf05-relatorio-gestao.svg) | Diagrama do workflow de relatório |
-| [WF06 — Integração CRM/ERP](docs/prints/wf06-integracao-crm-erp.svg) | Diagrama do adaptador universal CRM/ERP |
-| [WhatsApp — Print 1](evidencias/assets/wpp1.jpeg) | Análise de risco composto via WhatsApp |
-| [WhatsApp — Print 2](evidencias/assets/wpp2.jpeg) | Motor de inteligência comercial em operação |
-| [WhatsApp — Print 3](evidencias/assets/wpp3.jpeg) | Ciclo proativo autônomo das 8h |
-| [WhatsApp — Print 4](evidencias/assets/wpp4.jpeg) | Processamento multimodal — áudio |
-| [Email — Relatório na inbox](evidencias/assets/email3.jpeg) | Relatório executivo real recebido via Gmail OAuth2 |
-| [Diagrama de Arquitetura](evidencias/assets/diagrama.png) | Fluxo completo dos workflows e integrações |
-| [CRM Dashboard Preview](assets/dashboard-crm-preview.png) | Painel de controle premium — todos os módulos |
 | [Schema do Banco de Dados](data/schema.md) | Estrutura das 15 tabelas Supabase |
-| [Context Engineering — Arquitetura](docs/arquitetura/context-engineering.md) | Decisões de engenharia de contexto |
+| [Context Engineering — Arquitetura](docs/arquitetura/context-engineering.md) | Decisões de engenharia de contexto em 3 camadas |
+| [CRM Dashboard Preview](assets/dashboard-crm-preview.png) | Painel de controle premium — todos os módulos |
 
 ---
 
