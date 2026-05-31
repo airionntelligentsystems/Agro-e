@@ -602,9 +602,11 @@ footer{padding:48px 0;text-align:center;}
   <div class="ev-subnav">
     <a href="#ev-wpp">📱 WhatsApp Real</a>
     <a href="#ev-email">📧 Emails Entregues</a>
+    <a href="#ev-workflows">🔧 Workflows no n8n</a>
     <a href="#ev-diagrama">🏗️ Arquitetura em Operação</a>
     <a href="#ev-execucoes">⚡ Log de Execuções</a>
     <a href="#ev-motor">💰 Motor Comercial</a>
+    <a href="#ev-docs">📄 Documentação Técnica</a>
   </div>
 
   <!-- WhatsApp -->
@@ -654,6 +656,49 @@ footer{padding:48px 0;text-align:center;}
     </div>
     <div class="ibox amber">
       <strong>Emails proativos autônomos confirmados:</strong> A inbox exibe histórico de emails anteriores com assunto "agro-e Gestão | X crítico(s) · Y alto(s) · Z op..." — prova de execução autônoma diária independentemente de qualquer interação do operador. O sistema funciona como um analista permanente, 24/7.
+    </div>
+  </div>
+
+  <!-- Workflows Reais -->
+  <div id="ev-workflows">
+    <div class="ev-sub">Workflows em Produção — Capturas Reais do n8n</div>
+    <p class="ev-sub-desc">Prints originais extraídos diretamente do editor n8n em 29/05/2026, sem edição. Mostram os workflows reais publicados no projeto <strong>Agro V1</strong> — cada canvas com seus nós, conexões e sub-agentes em operação. Todos com status <code style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--green)">Publicado</code>.</p>
+
+    <div class="diag-wrap" style="margin-bottom:16px;">
+      <div class="diag-bar">
+        <div class="diag-dot d-r"></div>
+        <div class="diag-dot d-a"></div>
+        <div class="diag-dot d-g"></div>
+        <span class="diag-title">PROJETO AGRO V1 · WORKFLOWS PUBLICADOS · n8n</span>
+        <div class="diag-pills">
+          <span class="diag-pill">6 workflows</span>
+          <span class="diag-pill">244 nós</span>
+          <span class="diag-pill">100% publicados</span>
+        </div>
+      </div>
+      <img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wf-real-lista-workflows.png" alt="Lista de workflows publicados no n8n — projeto Agro V1" loading="lazy">
+    </div>
+
+    <div class="shots-3">
+      <div class="shot">
+        <img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wf01-real-entrada-monitor-proativo.png" alt="WF01 — Entrada WhatsApp + Monitor Proativo (canvas real n8n)" loading="lazy">
+        <div class="shot-lbl">WF01 · ENTRADA WHATSAPP + MONITOR PROATIVO · 133 NÓS</div>
+      </div>
+      <div class="shot">
+        <img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wf02-real-console-multiagentes.png" alt="WF02 — Console Multiagentes com 5 sub-agentes (canvas real n8n)" loading="lazy">
+        <div class="shot-lbl">WF02 · CONSOLE MULTIAGENTES · ROTEADOR + 5 SUB-AGENTES · 31 NÓS</div>
+      </div>
+      <div class="shot">
+        <img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wf03-real-escalada-humano.png" alt="WF03 — Escalada para Responsável Operacional (canvas real n8n)" loading="lazy">
+        <div class="shot-lbl">WF03 · ESCALADA PARA RESPONSÁVEL OPERACIONAL · 13 NÓS</div>
+      </div>
+      <div class="shot">
+        <img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wf04-real-monitor-vencimentos.png" alt="WF04 — Monitor de Vencimentos Documentais (canvas real n8n)" loading="lazy">
+        <div class="shot-lbl">WF04 · MONITOR DE VENCIMENTOS DOCUMENTAIS · 48 NÓS · 7h/12h</div>
+      </div>
+    </div>
+    <div class="ibox">
+      <strong>Capturas autênticas do ambiente de produção:</strong> As imagens acima são screenshots diretos do editor n8n, evidenciando os workflows reais publicados — não diagramas recriados. Cada canvas mostra a complexidade real da orquestração: o WF02 exibe o agente roteador conectado aos cinco sub-agentes especializados (documental, climático, câmbio, monitoramento autônomo e inteligência comercial) com memória PostgreSQL e Think Tool.
     </div>
   </div>
 
@@ -728,10 +773,32 @@ footer{padding:48px 0;text-align:center;}
       </table>
     </div>
   </div>
+
+  <!-- Documentação Técnica -->
+  <div id="ev-docs">
+    <div class="ev-sub">Documentação Técnica e Comercial — PDF Completo</div>
+    <p class="ev-sub-desc">Documento completo de 11 páginas detalhando arquitetura, os 6 workflows, score de risco composto, os 4 tipos de oportunidade comercial, especificação técnica de aderência ao escopo, stack de produção, conformidade LGPD e valor de negócio. Material de referência técnica do produto em sua versão 1.</p>
+    <div class="diag-wrap" style="padding:0;">
+      <div class="diag-bar">
+        <div class="diag-dot d-r"></div>
+        <div class="diag-dot d-a"></div>
+        <div class="diag-dot d-g"></div>
+        <span class="diag-title">AGRO-e · DOCUMENTAÇÃO TÉCNICA E COMERCIAL · v1 · MAIO 2026</span>
+        <div class="diag-pills">
+          <span class="diag-pill">11 páginas</span>
+          <span class="diag-pill">PDF</span>
+        </div>
+      </div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin:0;">O documento cobre integralmente: visão geral e os três pilares do sistema, fluxo de execução do modo proativo, arquitetura de memória em 3 camadas, funções detalhadas dos 6 workflows, tabela de aderência técnica ao escopo (todas as técnicas em nível Avançado), schema padronizado de integração CRM/ERP, medidas de proteção de dados LGPD e análise de ROI.</p>
+        <a href="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-doc-tecnica-comercial-v1.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#0a1f12;font-weight:600;font-size:13px;padding:11px 20px;border-radius:8px;text-decoration:none;">
+          📄 Abrir Documentação Técnica e Comercial (PDF · v1)
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
-
-<!-- ═══ STACK ═══ -->
 <section id="stack">
 <div class="wrap">
   <div class="sec-label">Especificação técnica</div>
