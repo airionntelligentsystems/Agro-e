@@ -1,26 +1,27 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/logo_t.png" alt="AGRO-e Intelligence" width="300"/>
+<img src="https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/logo_t.png" alt="AGRO-e Intelligence" width="320"/>
 
 <br/>
 
 <img src="https://img.shields.io/badge/Status-Em%20Produção-1a472a?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/n8n-6%20Workflows%20·%20244%20Nós-ea4b71?style=for-the-badge&logo=n8n&logoColor=white"/>
-<img src="https://img.shields.io/badge/LLM-GPT--4.1--mini-412991?style=for-the-badge&logo=openai&logoColor=white"/>
-<img src="https://img.shields.io/badge/Banco-Supabase%20%2B%20PostgreSQL-3ecf8e?style=for-the-badge&logo=supabase&logoColor=white"/>
-<img src="https://img.shields.io/badge/El%20Niño%202026-90%25%20Confirmado-f59e0b?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/GPT--4.1--mini-Multiagente-412991?style=for-the-badge&logo=openai&logoColor=white"/>
+<img src="https://img.shields.io/badge/Supabase%20%2B%20PostgreSQL%20%2B%20Redis-Persistência%20Multicamada-3ecf8e?style=for-the-badge&logo=supabase&logoColor=white"/>
+<img src="https://img.shields.io/badge/El%20Niño%202026-NOAA%2090%25%20Confirmado-f59e0b?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/LGPD-Compliant-0ea5e9?style=for-the-badge"/>
 
 <br/><br/>
 
 # AGRO-e Intelligence
-### Plataforma de Inteligência Autônoma para o Agronegócio
 
-**Monitoramento contínuo de riscos climáticos, documentais e financeiros — com identificação automática de oportunidades comerciais e entrega de análise acionável via WhatsApp e email, 24 horas por dia, todo dia útil.**
+### Plataforma Autônoma de Inteligência Operacional, Comercial e Climática para o Agronegócio
+
+**Antecipa riscos, identifica oportunidades e transforma sinais dispersos em decisões acionáveis sem dependência de intervenção humana.**
 
 <br/>
 
-[📋 Evidências de Funcionamento](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html) &nbsp;•&nbsp; [📄 Documentação Técnica](evidencias/agroe-documentacao-tecnica-comercial-_maio26.pdf) &nbsp;•&nbsp; [🖼️ Relatório PDF](evidencias/agroe-evidencias.pdf)
+[📋 Evidências em Produção](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html) &nbsp;•&nbsp; [📄 Relatório de Evidências](evidencias/agroe-evidencias.pdf) &nbsp;•&nbsp; [🖼️ CRM Dashboard](assets/dashboard-crm-preview.png)
 
 </div>
 
@@ -30,46 +31,151 @@
 
 | # | Seção |
 |---|---|
-| 1 | [O Problema que Este Sistema Resolve](#-o-problema-que-este-sistema-resolve) |
+| 1 | [Executive Summary](#-executive-summary) |
 | 2 | [Evidências de Funcionamento em Produção](#-evidências-de-funcionamento-em-produção) |
-| 3 | [CRM · Painel de Controle](#-crm--painel-de-controle) |
-| **4** | [**🌡️ Monitor Climático Contínuo**](#️-monitor-climático-contínuo--5-regiões-em-tempo-real) |
-| **5** | [**🌊 El Niño 2026 — Inteligência Estratégica**](#-el-niño-2026--inteligência-estratégica) |
-| 6 | [Todas as Capacidades](#-todas-as-capacidades) |
-| 7 | [Como o Sistema Opera](#-como-o-sistema-opera) |
-| 8 | [Arquitetura — 6 Workflows, 244 Nós](#-arquitetura--6-workflows-244-nós) |
-| 9 | [Funcionalidades Detalhadas](#-funcionalidades-detalhadas) |
-| 10 | [Stack Tecnológico](#-stack-tecnológico) |
-| 11 | [Proteção de Dados — LGPD](#-proteção-de-dados--lgpd) |
-| 12 | [Roadmap](#-roadmap) |
-| 13 | [Arquivos de Evidência](#-arquivos-de-evidência) |
+| 3 | [Por que o AGRO-e é diferente](#-por-que-o-agro-e-é-diferente) |
+| 4 | [O Diferencial Estratégico — Como o Sistema Pensa](#-o-diferencial-estratégico--como-o-sistema-pensa) |
+| 5 | [CRM · Painel de Controle](#️-crm--painel-de-controle) |
+| 6 | [Capacidades Estratégicas](#-capacidades-estratégicas) |
+| 7 | [Arquitetura — 6 Workflows, 244 Nós](#️-arquitetura--6-workflows-244-nós) |
+| 8 | [Decisões de Engenharia](#-decisões-de-engenharia) |
+| 9 | [Stack Tecnológico](#️-stack-tecnológico) |
+| 10 | [Proteção de Dados — LGPD](#-proteção-de-dados--lgpd) |
+| 11 | [Roadmap](#️-roadmap) |
+| 12 | [Evidências — Todos os Arquivos](#-evidências--todos-os-arquivos) |
 
 ---
 
-## 🌱 O Problema que Este Sistema Resolve
+## 📊 Executive Summary
 
-Empresas do agronegócio com carteiras de 50 a 500 produtores convivem com um risco estrutural difícil de eliminar manualmente: **a velocidade com que dados relevantes se tornam decisões é insuficiente para o ritmo do mercado agrícola.**
+> Para um avaliador que precisa entender a dimensão do projeto em menos de 30 segundos.
 
-Um documento vencido interrompe uma operação e pode custar entre R$50 mil e R$500 mil por incidente. Uma queda de preço em fertilizante importado dura 48 horas enquanto o câmbio sobe — e sem monitoramento contínuo, a janela fecha antes de qualquer reunião de compras. Um veranico de 9 dias no Cerrado compromete a lavoura de um produtor que poderia ter sido avisado com antecedência suficiente para agir. Com o El Niño 2026 confirmado com 90%+ de probabilidade a partir de agosto, o risco de escassez de insumos específicos e deterioração acelerada de safras eleva o custo da inação a um patamar inédito.
-
-**O AGRO-e elimina a latência entre dado e decisão.** Opera como um analista permanente: coleta sete fontes de dados em paralelo, calcula score de risco por cliente, cruza clima, câmbio e preços de insumos, e entrega análise acionável antes do início do expediente — sem depender de nenhum gatilho humano.
+| Dimensão | Resultado |
+|---|---|
+| **Workflows ativos em produção** | 6 workflows · 244 nós |
+| **Sub-agentes especializados** | 5 sub-agentes de IA independentes |
+| **Fontes de dados integradas** | 7 fontes simultâneas (PostgreSQL, Supabase, NOAA ENSO, Open-Meteo, AwesomeAPI/BCB, Gmail OAuth2, Google Calendar OAuth2) |
+| **Modos de operação** | Autônomo (schedule 8h) + Reativo (WhatsApp 24/7) |
+| **Multimodalidade** | Texto · Áudio (Whisper) · Imagem (Vision) · Documento (PDF Extract) |
+| **Execuções validadas em produção** | 20+ execuções · 100% success rate · 29/05/2026 |
+| **Latência P50 ponta-a-ponta** | 7 segundos (WhatsApp → IA → Resposta) |
+| **Oportunidades mapeadas em ciclo único** | 14 oportunidades identificadas |
+| **Receita potencial em um ciclo de análise** | R$ 1.562.000+ |
+| **Conformidade** | LGPD · RLS · Audit Trail · Anti-injection |
+| **Canal de entrega** | WhatsApp bidirecional + Email HTML + Dashboard CRM |
 
 ---
 
 ## 📸 Evidências de Funcionamento em Produção
 
-> Sistema validado em ambiente de produção real. Capturas realizadas em **29/05/2026**, sem edição ou simulação.
+> Sistema validado em ambiente real. Capturas realizadas em **29/05/2026**, sem edição ou simulação.
 
 👉 **[Acessar Relatório Completo de Evidências](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html)**
 
-| Indicador | Resultado |
+### WhatsApp — Conversas Reais em Produção
+
+| | |
 |---|---|
-| Execuções validadas em 29/05/2026 | **20+ execuções · 100% success rate** |
-| Latência P50 ponta-a-ponta | **7 segundos** (WhatsApp → IA → Resposta) |
-| Oportunidades mapeadas em ciclo único | **14 oportunidades identificadas** |
-| Receita potencial em um ciclo de análise | **R$ 1.562.000+** |
-| Workflows ativos em produção | **6 workflows · 244 nós** |
-| Sub-agentes especializados | **5 sub-agentes** |
+| ![WhatsApp — Análise de Risco](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp1.jpeg) | ![WhatsApp — Motor Comercial](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp2.jpeg) |
+| *Análise de risco composto entregue via WhatsApp* | *Motor de inteligência comercial — oportunidades identificadas* |
+| ![WhatsApp — Monitor Proativo](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp3.jpeg) | ![WhatsApp — Multimodal](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/wpp4.jpeg) |
+| *Ciclo proativo autônomo das 8h — relatório entregue sem intervenção* | *Processamento multimodal — áudio transcrito e respondido* |
+
+### Email — Relatório Executivo Real na Inbox
+
+![Relatório Executivo recebido na inbox — Gmail OAuth2](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/email3.jpeg)
+
+*Relatório executivo HTML enviado via Gmail OAuth2 — email real recebido na inbox, sem simulação.*
+
+### Diagrama de Arquitetura
+
+![Diagrama de Arquitetura AGRO-e — Workflows e Integrações](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/assets/diagrama.png)
+
+*Mapa completo de fluxo: entrada WhatsApp → normalização → sub-agentes → entrega multicanal.*
+
+---
+
+## ⚡ Por que o AGRO-e é diferente
+
+| Monitoramento Tradicional | AGRO-e Intelligence |
+|---|---|
+| Exibe dados | Interpreta contexto e entrega recomendação |
+| Monitora eventos em silos | Correlaciona clima, câmbio, preços e histórico simultaneamente |
+| Reage após o fato | Antecipa com base em padrões e fenômenos previstos |
+| Depende de análise humana | Produz análise acionável de forma autônoma |
+| Variáveis isoladas por sistema | Inteligência contextual multi-dimensional |
+| Dashboard que ninguém abre | Canal WhatsApp — onde o operador já está |
+| Relatório gerado manualmente | Ciclo autônomo às 8h — sem acionamento humano |
+| Sem memória conversacional | 3 camadas de memória — contexto preservado entre sessões |
+| Integração pontual | 5 conectores CRM/ERP pré-configurados |
+| Alerta genérico | Score composto 0–100 por cliente com multiplicador El Niño |
+
+---
+
+## 🧠 O Diferencial Estratégico — Como o Sistema Pensa
+
+O maior diferencial do AGRO-e não está em nenhuma capacidade isolada. Está na **inteligência de cruzamento** — a capacidade de transformar variáveis independentes em uma recomendação acionável específica para cada cliente.
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║                    MOTOR DE CORRELAÇÃO AGRO-e                    ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║   🌡️ CLIMA ATUAL         🌊 EL NIÑO 2026        💱 CÂMBIO        ║
+║   Open-Meteo GPS          NOAA ENSO API           AwesomeAPI     ║
+║   5 regiões · Horária     ONI +0.47°C ↑           USD/BRL RT     ║
+║          │                      │                     │          ║
+║          └──────────────────────┴─────────────────────┘          ║
+║                                 │                                 ║
+║                    ┌────────────▼────────────┐                   ║
+║                    │   MOTOR DE CONTEXTO      │                   ║
+║                    │  Histórico Comercial      │                   ║
+║                    │  Score de Risco 0-100     │                   ║
+║                    │  Perfil do Cliente        │                   ║
+║                    └────────────┬────────────┘                   ║
+║                                 │                                 ║
+║              📦 PREÇO INSUMOS  ─┤                                ║
+║              Catálogo Real       │                                ║
+║              Variação % ao vivo  │                                ║
+║                                  ▼                                ║
+║          ┌───────────────────────────────────────────┐           ║
+║          │          ENGINE DE DECISÃO                │           ║
+║          │  ✓ RECOMENDAÇÃO DE COMPRA ANTECIPADA      │           ║
+║          │  ✓ PROTEÇÃO DE MARGEM                     │           ║
+║          │  ✓ OPORTUNIDADE COMERCIAL COM PRAZO       │           ║
+║          │  ✓ ALERTA DE RISCO COM AÇÃO ESPECÍFICA    │           ║
+║          └───────────────────┬───────────────────────┘           ║
+║                               │                                   ║
+║          📱 WhatsApp    🖥️ CRM    📧 Email    📊 Relatório        ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+**O resultado prático:** A empresa que opera o AGRO-e sabe o que vai faltar no mercado antes que falte — e age antes que o concorrente perceba o movimento.
+
+### Fontes de Dados → Motor de Contexto → Entrega
+
+```
+┌──────────────────────┐    ┌─────────────────────┐    ┌──────────────────────┐
+│    FONTES INTERNAS   │    │   FONTES EXTERNAS   │    │    ENTREGA           │
+│                      │    │                     │    │                      │
+│  PostgreSQL          │    │  NOAA ENSO API      │    │  📱 WhatsApp         │
+│  Supabase (15 tab.)  │───▶│  Open-Meteo GPS     │───▶│  🖥️ CRM Dashboard   │
+│  Histórico Comercial │    │  AwesomeAPI/BCB     │    │  📧 Email OAuth2     │
+│  Carteira Clientes   │    │  INMET · CPTEC      │    │  📊 Relatórios BI    │
+│  Catálogo Insumos    │    │                     │    │  📅 Google Calendar  │
+└──────────────────────┘    └─────────────────────┘    └──────────────────────┘
+           │                          │
+           └──────────┬───────────────┘
+                      ▼
+         ┌────────────────────────────┐
+         │   SUBAGENTES ESPECIALIZADOS │
+         │  ├─ Climático              │
+         │  ├─ El Niño / ENSO         │
+         │  ├─ Câmbio / Insumos       │
+         │  ├─ Documental             │
+         │  └─ Inteligência Comercial  │
+         └────────────────────────────┘
+```
 
 ---
 
@@ -79,13 +185,13 @@ Interface web completa com dashboards em tempo real, cobrindo todos os times da 
 
 ![AGRO-e Intelligence · CRM Dashboard Premium](https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/assets/dashboard-crm-preview.png)
 
-*Painel de controle com Monitor Climático por região (5 regiões em tempo real), Score de Risco por cliente, Radar de Oportunidades, Câmbio + Preços de Insumos, Estoque Estratégico, Timeline de execução autônoma e WhatsApp integrado.*
+*Monitor Climático por região · Score de Risco em tempo real · Radar de Oportunidades · Câmbio e Preços de Insumos · Estoque Estratégico · Timeline de execução autônoma · WhatsApp integrado.*
 
 **Módulos disponíveis no CRM:**
 
 | Área | Módulos |
 |---|---|
-| **CRM Comercial** | Carteira de Clientes · Cadastro · Pipeline de Vendas · Radar de Oportunidades · Histórico |
+| **CRM Comercial** | Carteira de Clientes · Cadastro · Pipeline de Vendas · Radar de Oportunidades · Histórico Comercial |
 | **Monitor de Riscos** | Análise de Riscos · Monitor Climático · El Niño 2026 · Monitor Câmbio · Documentos |
 | **Compras e Estoque** | Estoque Estratégico · Catálogo de Insumos · Preços de Mercado · Fornecedores |
 | **Financeiro** | Dashboard Financeiro · Análise de Margens |
@@ -93,133 +199,132 @@ Interface web completa com dashboards em tempo real, cobrindo todos os times da 
 
 ---
 
-## 🌡️ Monitor Climático Contínuo · 5 Regiões em Tempo Real
+## ✦ Capacidades Estratégicas
 
-O monitoramento climático é uma função permanente do sistema — não está subordinado a eventos específicos. Dados meteorológicos são coletados via Open-Meteo API com coordenadas GPS de cada região da carteira, hora a hora, e processados a cada ciclo proativo.
-
-### O Que é Monitorado por Região
-
-Para cada região onde há produtores cadastrados, o sistema coleta e analisa:
-
-| Variável | Fonte | Frequência | Thresholds de Alerta |
-|---|---|---|---|
-| Precipitação acumulada (3d/7d) | Open-Meteo GPS | Horária | >60mm → ALTO · >100mm → CRÍTICO |
-| Temperatura máxima/mínima | Open-Meteo GPS | Horária | <5°C → risco de geada · >38°C → estresse hídrico |
-| Umidade relativa | Open-Meteo GPS | Horária | <30% → risco de incêndio · >90% → doenças fúngicas |
-| Período de seca | Open-Meteo GPS | Diária | >7 dias → ALTO · >14 dias → CRÍTICO |
-| Velocidade do vento | Open-Meteo GPS | Horária | >60 km/h → risco operacional |
-
-### Classificação de Risco Climático
-
-```
-CRÍTICO  — Ação imediata. Exemplo: 68mm/3d no Sul, seca 18 dias no Nordeste.
-ALTO     — Esta semana. Exemplo: veranico 9 dias no Cerrado, geada prevista RS.
-MODERADO — Este mês. Exemplo: umidade elevada favorecendo doenças fúngicas.
-POSITIVO — El Niño favorece produtividade nesta região. Oportunidade de expansão.
-```
-
-### Regiões Atualmente Monitoradas
-
-| Região | Bioma | Culturas | Condição Atual (30/05) |
-|---|---|---|---|
-| Sul (RS · SC · PR) | Pampa/Mata Atlântica | Soja · Trigo · Milho | 🔴 68mm/3d · risco enchente |
-| Cerrado · Matopiba (GO · MT) | Cerrado | Soja · Algodão | 🟠 Veranico 9 dias |
-| Sudeste (MG · SP) | Mata Atlântica/Cerrado | Cana · Café · Milho | 🟢 Condições favoráveis |
-| Nordeste (CE · PI · MA) | Caatinga/Semiárido | Sequeiro · Pecuária | 🔴 Seca 18 dias crítica |
-| Norte/Matopiba (PA · MA) | Amazônia/Cerrado | Soja expansão | 🟡 Monitoramento preventivo |
-
-### Como o Clima Gera Oportunidades Comerciais
-
-O sistema cruza automaticamente os dados climáticos com o histórico de compras de cada produtor:
-
-```
-ALERTA: Veranico 9 dias previsto Cerrado
-+ HISTÓRICO: Carlos Mendes (450ha milho) sem sistema de irrigação
-+ CATÁLOGO: Gotejamento disponível, margem de 38%
-+ CÂMBIO: USD/BRL subindo → insumos importados mais caros em breve
-= OPORTUNIDADE: Proposta gotejamento para Carlos Mendes
-  Receita potencial: R$48.000 · Urgência: esta semana
-```
+Cada capacidade foi projetada para operar de forma independente e integrada — sem configuração manual por execução.
 
 ---
 
-## 🌊 El Niño 2026 — Inteligência Estratégica
+### 1 · Inteligência Climática Operacional
 
-O El Niño 2026 é monitorado como uma camada adicional sobre o sistema climático regular — amplificando alertas existentes e antecipando padrões de escassez de insumos que afetam toda a cadeia do agronegócio.
+**O que faz:** Monitora condições meteorológicas em tempo real para cada região da carteira de produtores, 24 horas por dia.
 
-### Dados Oficiais — NOAA/CPC · INMET · CPTEC
+**Como funciona:** Open-Meteo API com coordenadas GPS específicas de cada região. Coleta horária de precipitação acumulada (3 e 7 dias), temperatura, umidade relativa, período de seca acumulada e velocidade do vento. No ciclo das 8h, os dados são consolidados em um score climático regional que alimenta o score de risco composto de cada cliente.
 
-| Probabilidade | Período | Status |
+**Impacto operacional:** O operador sabe, antes de qualquer visita, quais regiões estão sob stress hídrico, risco de enchente ou condições favoráveis a pragas — e recebe proposta de ação junto com o alerta.
+
+| Variável | Threshold ALTO | Threshold CRÍTICO |
 |---|---|---|
-| **82%** | Maio–Julho 2026 | 🟡 El Niño Watch (NOAA, 14/05/2026) |
-| **90%+** | Agosto–Outubro 2026 | 🔴 Formação confirmada pelos modelos |
-| **96%** | Dezembro 2026–Fevereiro 2027 | 🔴 Persistência garantida |
+| Precipitação acumulada 3d | >60mm | >100mm |
+| Temperatura mínima | — | <5°C (geada) |
+| Temperatura máxima | — | >38°C (estresse hídrico) |
+| Umidade relativa | >90% (fungos) | <30% (incêndio) |
+| Período de seca | >7 dias | >14 dias |
 
-**ONI atual (Niño 3.4 SST): +0.47°C e subindo.**
+---
 
-### El Niño Integrado com Câmbio e Preços de Insumos
+### 2 · Inteligência Preditiva El Niño 2026/2027
 
-O diferencial não está no alerta climático isolado — está no cruzamento com câmbio e preços:
+**O que faz:** Monitora o fenômeno El Niño em tempo real via NOAA/CPC ENSO API, cruza com impacto regional e aplica multiplicador de risco ao score composto de cada cliente.
 
-| Insumo | Preço Atual | Contexto El Niño + Câmbio | Recomendação |
-|---|---|---|---|
-| MAP Fertilizante | −7.8% | Câmbio +1.8%/24h · reversão iminente | **Comprar — janela de 48h** |
-| KCL Cloreto Potássio | −7.0% | Demanda Cerrado sobe com irrigação | **Comprar — esta semana** |
-| Glifosato 480 SC | −9.2% | Preço mínimo do ciclo atual | **Oportunidade imediata** |
-| Fungicida Elatus | +10.4% ⚠ | Escassez prevista Sul · El Niño + chuva | **Estocar antes de julho** |
-| Sistema Gotejamento | +12% ⚠ | Demanda explosiva Jul–Ago no Cerrado | **Proposta antecipada** |
+**Como funciona:** Consulta diária ao ONI (Oceanic Niño Index). Cruza com previsões do INMET e CPTEC por bioma. Para cada cliente, calcula um multiplicador de risco baseado em: região, cultura cultivada, fase agrícola e ONI atual. O resultado eleva o score de risco do cliente em até +30% em cenários críticos.
 
-### Estratégias por Região · El Niño 2026
+**Impacto operacional:** O sistema identifica automaticamente quais insumos terão escassez durante o pico do fenômeno — e recomenda compra antecipada com janela de ação específica.
 
-| Região | Impacto El Niño | Ação Estratégica | Urgência |
+| Região | Impacto El Niño | Ação Estratégica Gerada | Urgência |
 |---|---|---|---|
 | Sul (RS/SC/PR) | Excesso de chuva · doenças fúngicas | Estocar fungicidas antes da escassez Jul–Set | CRÍTICO |
 | Cerrado · GO/MT | Veranico Jan–Fev · janela de plantio curta | Proposta irrigação gotejamento antes de Dez | ALTO |
 | Nordeste | Seca severa 2º semestre | Forragem e silagem: janela fecha em julho | CRÍTICO |
-| Sudeste | Inverno menos frio · pragas favorecidas | Monitoramento reforçado · inseticidas | MODERADO |
+| Sudeste | Inverno mais quente · pragas favorecidas | Monitoramento reforçado · inseticidas | MODERADO |
+
+**Dados oficiais NOAA (14/05/2026):**
+
+| Probabilidade | Período | Status |
+|---|---|---|
+| **82%** | Maio–Julho 2026 | 🟡 El Niño Watch |
+| **90%+** | Agosto–Outubro 2026 | 🔴 Formação confirmada |
+| **96%** | Dezembro 2026–Fevereiro 2027 | 🔴 Persistência garantida |
 
 ---
 
-## ⚡ Todas as Capacidades
+### 3 · Inteligência Cambial e Compras
 
-| # | Capacidade | Tecnologia | Quando Ativa |
-|---|---|---|---|
-| ★ 1 | **🌡️ Monitor Climático Contínuo** | Open-Meteo GPS · 5 regiões | Horária + ciclo proativo 8h |
-| ★ 2 | **🌊 El Niño NOAA/CPTEC** | ENSO API + score multiplier | Diariamente · ciclo proativo 8h |
-| ★ 3 | **📦 Estoque Estratégico** | El Niño + câmbio + catálogo | Autônomo + consulta reativa |
-| ★ 4 | **💱 Câmbio USD/BRL** | AwesomeAPI/BCB real-time | Contínuo · alerta >1.5% |
-| ★ 5 | **🎙️ Áudio — Transcrição** | OpenAI Whisper | Ao receber mensagem de voz |
-| ★ 6 | **📄 Documentos — IDP** | PDF Extract + Context Injection | Ao receber PDF/documento |
-| ★ 7 | **🖼️ Imagens — Computer Vision** | OpenAI Vision | Ao receber foto/imagem |
-| 8 | 📱 WhatsApp Bidirecional | Evolution API + Redis | Ao receber qualquer mensagem |
-| 9 | ⏰ Monitor Proativo 8h | Cron · 7 fontes | Automaticamente · sem intervenção |
-| 10 | 🏗️ Motor de Inteligência Comercial | SQL + JS Engine · 4 tipos | Ciclo proativo + consulta |
-| 11 | 📋 Agente Analista Documental | Score 0–40pts · WF04 | Proativo + menção a documentos |
-| 12 | 📊 Score Composto de Risco 0–100 | 5 fatores + multiplicador El Niño | Ciclo proativo 8h |
-| 13 | 📧 Email Real via Gmail API | Gmail OAuth2 + Tool Calling | Proativo 9h + solicitação |
-| 14 | 📅 Alertas Google Calendar | Google Calendar OAuth2 | Solicitação reativa |
-| 15 | 🧠 Memória Conversacional | Redis + PostgreSQL + Supabase | Em toda interação |
-| 16 | 📊 Relatórios Executivos BI | WF05 + Supabase REST | Automaticamente às 9h |
-| 17 | 👤 Onboarding Zero-Touch | Auto-register Supabase | Primeira mensagem |
-| 18 | 🔁 Escalada Humana HITL | WF03 + Context Handoff | Score >85 ou situação crítica |
-| 19 | 🔌 Integração CRM/ERP Universal | WF06 + 5 conectores | Passivamente · todo evento |
+**O que faz:** Monitora USD/BRL em tempo real, calcula impacto direto nos preços de cada insumo do catálogo e dispara alertas quando janelas de compra se abrem ou se fecham.
+
+**Como funciona:** AwesomeAPI/Banco Central com polling contínuo. Variação >1.5%/24h aciona alerta de pressão sobre fertilizantes importados. Variação >2.5%/24h aciona alerta CRÍTICO com recomendação de antecipação de compra. Quando câmbio sobe + preço do insumo está em queda, o sistema identifica automaticamente a janela dupla.
+
+**Impacto operacional:** O operador é avisado antes da reversão de preço — não depois. A diferença entre agir em 48h e não agir pode ser a diferença entre comprar MAP a R$2.100/t ou a R$2.350/t.
 
 ---
 
-## 🔄 Como o Sistema Opera
+### 4 · Radar de Oportunidades Comerciais
 
-### Modo Autônomo (8h)
-`cron: 0 8 * * 1-6` — zero intervenção humana
+**O que faz:** Identifica oportunidades de venda cruzando dados de preço, clima, câmbio e histórico de compras de cada cliente — sem depender de input humano.
+
+**Como funciona:** Motor SQL em 4 tipos de detecção automática:
 
 ```
-08:00 → Fan-out paralelo: Postgres + Supabase + NOAA ENSO + Open-Meteo (5 regiões) + AwesomeAPI/BCB
-08:03 → Score climático por região + multiplicador El Niño + análise de câmbio + preços insumos
-08:05 → 5 sub-agentes: Documental, Climático, Câmbio, Proativo, Comercial
-08:15 → WhatsApp + Email HTML executivo + Relatório salvo no Supabase
+TIPO 1 · Preço Favorável + Câmbio
+  → Insumo caiu >3% + câmbio sobe = janela que se fecha em horas
+  → Sistema identifica quais clientes já compraram esse produto antes
+  → Gera proposta com quantidade sugerida, desconto calculado e receita projetada
+
+TIPO 2 · Antecipação Climática
+  → Alerta climático ativo em uma região + cliente com cultivo sensível cadastrado
+  → Sistema cruza com produtos do catálogo relevantes para aquela cultura
+  → Gera proposta de antecipação com prazo de urgência
+
+TIPO 3 · Expansão Estratégica
+  → Região com baixa presença da empresa + ponto fraco de concorrente identificado
+  → El Niño cria momento ideal para expansão em regiões que concorrente não monitora
+
+TIPO 4 · Risco de Churn
+  → Cliente com potencial ALTO + mais de 120 dias sem compra
+  → Risco elevado de migração para concorrente durante crise climática
 ```
 
-### Modo Reativo — Conversacional
-Texto · áudio · imagem · documento. Qualquer mídia enviada pelo WhatsApp. Latência P50: 7 segundos.
+---
+
+### 5 · Inteligência Documental
+
+**O que faz:** Monitora vencimentos de documentos operacionais e regulatórios de toda a carteira — e classifica por impacto no SLA da operação.
+
+**Como funciona:** Score 0–40pts por documento, executado 2× ao dia (7h urgentes ≤2d, 12h proximidades 3–14d). Documentos de bloqueio operacional (licença ambiental, registro de produtor rural, certificado fitossanitário) recebem classificação CRÍTICO automática.
+
+**Impacto operacional:** Elimina o risco de descobrir um documento vencido no dia de uma operação crítica — que pode custar entre R$50k e R$500k por incidente.
+
+---
+
+### 6 · CRM Inteligente
+
+**O que faz:** Mantém histórico completo da carteira de clientes, consolida dados de risco, compras e oportunidades em um painel unificado acessível por todos os times.
+
+**Como funciona:** Supabase (15 tabelas, RLS por perfil de acesso) + Redis para sessão e debounce. Score composto por cliente calculado diariamente. Dashboard web com módulos para CRM Comercial, Compras, Financeiro, Monitor de Riscos e Automação.
+
+---
+
+### 7 · Orquestração Autônoma
+
+**O que faz:** Opera o ciclo completo de inteligência sem qualquer intervenção humana — do gatilho ao relatório entregue no WhatsApp.
+
+**Como funciona:**
+
+```
+Modo Autônomo (cron: 0 8 * * 1-6)
+  → Fan-out paralelo de 7 fontes simultâneas
+  → Consolidação em contexto estruturado
+  → 5 sub-agentes em paralelo
+  → Think Tool × 2 (raciocínio auditável)
+  → WhatsApp + Email + Supabase em um único ciclo
+  → Tempo médio de ciclo completo: ~15 minutos
+
+Modo Reativo (WhatsApp 24/7)
+  → Texto · Áudio (Whisper ASR) · Imagem (Vision) · Documento (PDF)
+  → Latência P50: 7 segundos
+  → Memória 3 camadas: Redis (1h) + PostgreSQL (90d) + Supabase (permanente)
+  → Reconhece contexto sem re-identificação
+```
 
 ---
 
@@ -230,15 +335,15 @@ Texto · áudio · imagem · documento. Qualquer mídia enviada pelo WhatsApp. L
 │             WF01 — ENTRADA + MONITOR PROATIVO (133 nós)                  │
 │  REATIVO:  WhatsApp → Evolution API → Normalizador Universal → WF02      │
 │            └─ Texto · Áudio (Whisper) · Imagem (Vision) · PDF (Extract)  │
-│                                                                          │
-│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                     │
-│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo 5 regiões   │
+│                                                                           │
+│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                    │
+│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo 5 regiões  │
 │               AwesomeAPI/BCB · Score climático · Multiplicador El Niño   │
 └───────────────────────────────┬──────────────────────────────────────────┘
                                 │
 ┌───────────────────────────────▼──────────────────────────────────────────┐
 │             WF02 — CONSOLE MULTI-AGENTES (31 nós)                        │
-│                                                                          │
+│                                                                           │
 │  Agente Roteador (GPT-4.1-mini · Postgres Chat Memory · Think Tool × 2)  │
 │  ├── agente_monitor_climatico     → Open-Meteo GPS · 5 regiões           │
 │  ├── agente_elnino_monitor        → NOAA ENSO · impacto por região       │
@@ -246,7 +351,7 @@ Texto · áudio · imagem · documento. Qualquer mídia enviada pelo WhatsApp. L
 │  ├── agente_analista_documental   → score 0–40pts · SLA tracking         │
 │  ├── agente_monitoramento_autonomo → score composto 0–100                │
 │  ├── agente_inteligencia_comercial → 4 tipos de oportunidade             │
-│  ├── Google Calendar × 3 tools   → alertas automáticos                   │
+│  ├── Google Calendar × 3 tools   → alertas automáticos                  │
 │  └── encaminhar_responsavel_humano → WF03                                │
 └──────────┬──────────────┬───────────────┬───────────────┬────────────────┘
            │              │               │               │
@@ -257,64 +362,13 @@ Texto · áudio · imagem · documento. Qualquer mídia enviada pelo WhatsApp. L
     └─────────────┘ └────────────┘ └────────────┘ └────────────┘
 ```
 
----
-
-## 📖 Funcionalidades Detalhadas
-
-### 🌡️ Monitor Climático Contínuo — Open-Meteo GPS por Região
-
-**Como funciona:** Consulta Open-Meteo API usando as coordenadas GPS de cada região da carteira de clientes, com atualização horária. Para cada região, coleta precipitação acumulada (3 e 7 dias), temperatura máxima/mínima, umidade relativa, período de seca e velocidade do vento.
-
-No ciclo proativo das 8h, os dados de todas as regiões são consolidados em um score climático regional que alimenta o score composto de risco por cliente. O agente cruza automaticamente com o histórico de compras para identificar oportunidades de antecipação.
-
-**Thresholds:**
-- Precipitação >60mm/3d → ALTO · >100mm → CRÍTICO
-- Temperatura <5°C → risco de geada · >38°C → estresse hídrico
-- Umidade <30% → risco de incêndio · >90% → doenças fúngicas
-- Seca >7 dias → ALTO · >14 dias → CRÍTICO
-
-**Quando ativa:** Coleta horária via Open-Meteo. Processamento e alertas no ciclo proativo 8h e em qualquer consulta reativa sobre clima.
-
----
-
-### 🌊 El Niño NOAA/CPTEC — Camada Estratégica Adicional
-
-**Como funciona:** Consulta diária à NOAA/CPC ENSO API para o ONI (Oceanic Niño Index). Cruza com previsões do INMET e CPTEC por bioma. Calcula multiplicador de risco El Niño por cliente com base em região, cultura cultivada, fase agrícola e ONI atual. Integra com cotação USD/BRL para calcular impacto nos preços de insumos importados.
-
-**Quando ativa:** Diariamente no ciclo proativo 8h. Integrado a toda consulta climática, de câmbio ou de estoque.
-
----
-
-### 💱 Câmbio USD/BRL — Integrado ao Clima e Insumos
-
-**Thresholds:**
-- Variação >1.5%/24h → ALERTA: pressão sobre fertilizantes importados
-- Variação >2.5%/24h → CRÍTICO: antecipação de compra recomendada
-- Alta >5 dias consecutivos → recomendação de hedge para exportadores
-- Câmbio sobe + insumo cai → janela dupla identificada automaticamente
-
-**Quando ativa:** Ciclo autônomo 8h e qualquer consulta sobre preços ou financeiro.
-
----
-
-### 🏗️ Motor de Inteligência Comercial — 4 Tipos de Oportunidade
-
-```
-1. Preço Favorável + Câmbio:   insumo caiu >3% mas câmbio sobe → janela se fecha
-2. Antecipação Climática:      alerta regional ativo + produto relevante no histórico
-3. Expansão Estratégica:       região com baixa presença + fraqueza do concorrente
-4. Risco de Churn:             >120 dias sem compra + pressão climática ou cambial
-```
-
----
-
-### 📊 Score Composto de Risco 0–100
+### Score Composto de Risco 0–100
 
 | Fator | Critério | Pontuação |
 |---|---|---|
-| Documental | Vencido=40 · ≤7d=35 · ≤30d=25 | Máx 40pts |
-| Chamados abertos | 7pts por chamado crítico | Máx 20pts |
-| Histórico de atrasos | `historico_atrasos=true` | 15pts fixos |
+| Documental | Vencido=40 · ≤7d=35 · ≤30d=25 · ≤60d=15 | Máx 40pts |
+| Chamados abertos | 7pts por chamado crítico aberto | Máx 20pts |
+| Histórico de atrasos | `historico_atrasos=true` no perfil | 15pts fixos |
 | Exposição cambial | Crítica=15 · Alta=8 · Média=3 | Máx 15pts |
 | Risco climático | >100mm=10 · >60mm=7 · Seca >14d=8 | Máx 10pts |
 | **Multiplicador El Niño** | **Região × Cultura × ONI × Fase agrícola** | **+0–30%** |
@@ -323,21 +377,69 @@ No ciclo proativo das 8h, os dados de todas as regiões são consolidados em um 
 
 ---
 
-## 🖥️ Stack Tecnológico
+## 🔧 Decisões de Engenharia
+
+Registradas para demonstrar o raciocínio de design — não apenas o que foi construído, mas por que foi construído assim.
+
+---
+
+**Por que múltiplos agentes em vez de um único agente genérico?**
+
+Cada sub-agente tem um system prompt especializado e um escopo de dados específico. Um agente genérico para análise climática, documental, cambial e comercial ao mesmo tempo produz respostas médias em tudo. Sub-agentes especializados produzem respostas precisas em cada domínio, com menor risco de confusão de contexto e maior rastreabilidade de erros.
+
+---
+
+**Por que Supabase + PostgreSQL em vez de apenas Supabase?**
+
+PostgreSQL via conexão direta é usado para operações que exigem SQL complexo: JOINs multi-tabela para o motor de oportunidades, queries de score composto com múltiplos fatores, e memória conversacional de longo prazo (90 dias). Supabase REST API é usado para operações simples de leitura e escrita de linhas únicas — onde a overhead do SQL não é necessária e a velocidade de resposta é crítica.
+
+---
+
+**Por que Redis como camada de memória de curto prazo?**
+
+O Redis resolve dois problemas simultaneamente: debounce de mensagens WhatsApp (usuários frequentemente enviam mensagens fragmentadas em sequência rápida — o sistema aguarda 10 segundos antes de processar, acumulando a mensagem completa) e armazenamento de contexto de mídia (transcrições de áudio, análises de imagem e extrações de PDF ficam em cache TTL 1h para não reprocessar se o usuário fizer follow-up imediato).
+
+---
+
+**Por que monitoramento proativo às 8h em vez de alertas em tempo real?**
+
+Alertas em tempo real para uma carteira de 50–500 produtores gerariam dezenas de notificações por dia — a maioria sem ação imediata necessária. O ciclo das 8h consolida todos os sinais, prioriza por urgência e entrega um relatório executivo estruturado antes do início do expediente. O operador recebe o que importa, na ordem que importa, no momento em que pode agir.
+
+---
+
+**Como o sistema reduz hallucination?**
+
+O nome de cada cliente é extraído diretamente do banco de dados via SQL — nunca gerado pelo modelo. O system prompt proíbe explicitamente a criação de nomes ou dados que não existam nos dados injetados. As oportunidades comerciais são calculadas por código JavaScript determinístico (não por inferência do LLM) e passadas ao agente como strings formatadas. O modelo interpreta e comunica — não inventa dados.
+
+---
+
+**Como trata rastreabilidade?**
+
+Cada execução gera um `execucao_id` único. O histórico de execuções é salvo no Supabase (`agroe_historico_execucoes`) com timestamp, modo (proativo/reativo), telefone e output completo truncado a 2000 chars. Relatórios de gestão (`agroe_relatorios_gestao`) armazenam cada alerta e oportunidade com tipo, prioridade, ação recomendada e status de rastreamento (pendente → em_andamento → resolvido).
+
+---
+
+**Como protege contra prompt injection?**
+
+7 system prompts em camadas distintas: roteador principal, cada sub-agente, e o normalizador de entrada. Nenhum dado do usuário é injetado no system prompt — apenas no campo `text` controlado. Mensagens que contenham comandos de instrução são tratadas como input de usuário e não elevam permissões. O sanitizador de saída (`Sanitiza Resposta WhatsApp`) detecta e bloqueia JSON Schema, stack traces e conteúdo técnico interno antes do envio.
+
+---
+
+## 🛠️ Stack Tecnológico
 
 | Componente | Tecnologia | Função |
 |---|---|---|
 | Orquestração | n8n self-hosted | 6 workflows · 244 nós |
-| LLM / IA | GPT-4.1-mini (OpenAI) | Motor de análise multi-agente |
+| LLM | GPT-4.1-mini (OpenAI) | Motor de análise multi-agente |
 | ASR | OpenAI Whisper | Transcrição de áudios WhatsApp |
-| Vision | OpenAI Vision | Análise de imagens WhatsApp |
-| Monitor Climático | Open-Meteo API (gratuita) | GPS por região · atualização horária |
+| Vision | OpenAI Vision | Análise de imagens e documentos |
+| Monitor Climático | Open-Meteo API | GPS por região · atualização horária |
 | Monitor ENSO | NOAA/CPC + INMET + CPTEC | El Niño · ONI index em tempo real |
 | Câmbio | AwesomeAPI / Banco Central | USD/BRL real-time · impacto por insumo |
 | Banco de Dados | Supabase + PostgreSQL | 15 tabelas · RLS · Views |
 | Memória Rápida | Redis (TTL 1h) | Debounce + contexto de sessão |
 | WhatsApp | Evolution API | Canal bidirecional multimodal |
-| Email | Gmail OAuth2 | Relatórios executivos |
+| Email | Gmail OAuth2 | Relatórios executivos reais |
 | Calendário | Google Calendar OAuth2 | Alertas automáticos |
 
 ---
@@ -348,40 +450,46 @@ No ciclo proativo das 8h, os dados de todas as regiões são consolidados em um 
 |---|---|---|
 | Row Level Security | RLS em todas as tabelas com dados pessoais | Art. 46 LGPD |
 | Anonimização SQL | `agroe_anonimiza_telefone()` · `agroe_anonimiza_nome()` | Art. 12 LGPD |
-| Retenção mínima | Chat: 90d · Logs: 180d · Execuções: 365d | Art. 15 LGPD |
+| Retenção mínima | Chat: 90d · Logs: 180d · Execuções: 365d · limpeza automática | Art. 15 LGPD |
 | Audit Trail | `agroe_lgpd_acesso_log` — todas as operações com dados pessoais | Art. 37 LGPD |
-| Anti-injection | 7 system prompts com proteção contra manipulação | Segurança |
+| Anti-injection | 7 system prompts com proteção contra manipulação de entrada | Segurança |
 
 ---
 
 ## 🗺️ Roadmap
 
-| Fase | Período | Entrega |
+| Fase | Foco | Entrega |
 |---|---|---|
-| **Fase 1** — Dados Reais | Meses 1–2 | Integração ERP/CRM real · calibração de scores com histórico operacional |
-| **Fase 2** — RAG Semântico | Meses 2–3 | pgvector + Supabase · busca em contratos e documentos históricos |
-| **Fase 3** — Aprendizado Contínuo | Meses 3–4 | Feedback loop · pesos do score ajustados automaticamente por região |
-| **Fase 4** — Multi-Tenant SaaS | Meses 4–6 | Isolamento de dados · billing · API REST · múltiplas empresas |
+| **Fase 1** | Calibração com dados reais | Integração com dados operacionais reais · ajuste de scores e thresholds por histórico |
+| **Fase 2** | Ampliação de fontes | Novas APIs climáticas regionais · fontes de preço de insumos em tempo real |
+| **Fase 3** | Modelos preditivos | Feedack loop · pesos do score ajustados automaticamente por região e cultivo |
+| **Fase 4** | Integrações corporativas | Conectores adicionais ERP/CRM · API REST pública · exportação para BI externo |
+| **Fase 5** | Escalabilidade | Isolamento de dados multi-empresa · infraestrutura de escala horizontal |
 
 ---
 
-## 🗂️ Arquivos de Evidência
+## 🗂️ Evidências — Todos os Arquivos
 
 | Arquivo | Descrição |
 |---|---|
-| [Relatório HTML Interativo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html) | Evidências completas — prints WhatsApp, emails, log execuções, motor comercial |
-| [Relatório PDF](evidencias/agroe-evidencias.pdf) | Versão PDF do relatório |
-| [Documentação Técnica e Comercial](evidencias/agroe-documentacao-tecnica-comercial-_maio26.pdf) | 11 páginas · produto completo |
+| [Relatório HTML Interativo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/airionntelligentsystems/Agro-e/main/evidencias/agroe-evidencias.html) | Evidências completas — prints WhatsApp, emails, log de execuções, motor comercial |
+| [Relatório de Evidências PDF](evidencias/agroe-evidencias.pdf) | Versão PDF do relatório completo |
+| [Diagrama de Arquitetura](evidencias/assets/diagrama.png) | Fluxo completo dos workflows e integrações |
+| [WhatsApp — Print 1](evidencias/assets/wpp1.jpeg) | Análise de risco composto entregue via WhatsApp |
+| [WhatsApp — Print 2](evidencias/assets/wpp2.jpeg) | Motor de inteligência comercial em operação |
+| [WhatsApp — Print 3](evidencias/assets/wpp3.jpeg) | Ciclo proativo autônomo das 8h |
+| [WhatsApp — Print 4](evidencias/assets/wpp4.jpeg) | Processamento multimodal — áudio |
+| [Email — Relatório na inbox](evidencias/assets/email3.jpeg) | Relatório executivo real recebido via Gmail OAuth2 |
 | [CRM Dashboard Preview](assets/dashboard-crm-preview.png) | Painel de controle premium — todos os módulos |
 
 ---
 
 <div align="center">
 
-**AGRO-e Intelligence** · Monitoramento Autônomo de Riscos e Inteligência Comercial para o Agronegócio Brasileiro
+**AGRO-e Intelligence** · Inteligência Operacional, Comercial e Climática Autônoma para o Agronegócio Brasileiro
 
 André Fernandes · Maio 2026
 
-* Pronto para operação real · Pronto para produção · El Niño 2026 monitorado · Escalável · IP protegido*
+*Em operação real · Arquitetura production-grade · El Niño 2026 monitorado · IP protegido*
 
 </div>
