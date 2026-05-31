@@ -185,37 +185,37 @@ O maior diferencial do AGRO-e não está em nenhuma capacidade isolada. Está na
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                                                                  │
-│         CLIMA REGIONAL                                           │
+│                                                                 │
+│         CLIMA REGIONAL                                          │
 │         Open-Meteo GPS · 5 regiões · Atualização horária        │
-│              +                                                   │
-│         EL NIÑO 2026                                             │
+│              +                                                  │
+│         EL NIÑO 2026                                            │
 │         NOAA ENSO API · ONI +0.47°C · 96% confirmado            │
-│              +                                                   │
-│         CÂMBIO USD/BRL                                           │
+│              +                                                  │
+│         CÂMBIO USD/BRL                                          │
 │         AwesomeAPI/BCB · Polling contínuo · Alerta >1.5%        │
-│              +                                                   │
-│         PREÇO DE INSUMOS                                         │
-│         Catálogo real · Variação % em tempo real                 │
-│              +                                                   │
-│         HISTÓRICO COMERCIAL DO CLIENTE                           │
-│         PostgreSQL · O que comprou · Quando · Quanto             │
-│                                                                  │
-│                          ↓                                       │
-│                                                                  │
-│              RECOMENDAÇÃO DE COMPRA                              │
-│     Cliente específico · Produto · Quantidade · Prazo            │
-│                                                                  │
-│                          ↓                                       │
-│                                                                  │
-│                PROTEÇÃO DE MARGEM                                │
-│       Compra antes da reversão de preço e da escassez            │
-│                                                                  │
-│                          ↓                                       │
-│                                                                  │
-│               OPORTUNIDADE COMERCIAL                             │
-│    Receita real · Urgência real · Ação antes do concorrente      │
-│                                                                  │
+│              +                                                  │
+│         PREÇO DE INSUMOS                                        │
+│         Catálogo real · Variação % em tempo real                │
+│              +                                                  │
+│         HISTÓRICO COMERCIAL DO CLIENTE                          │
+│         PostgreSQL · O que comprou · Quando · Quanto            │
+│                                                                 │
+│                          ↓                                      │
+│                                                                 │
+│              RECOMENDAÇÃO DE COMPRA                             │
+│     Cliente específico · Produto · Quantidade · Prazo           │
+│                                                                 │
+│                          ↓                                      │
+│                                                                 │
+│                PROTEÇÃO DE MARGEM                               │
+│       Compra antes da reversão de preço e da escassez           │
+│                                                                 │
+│                          ↓                                      │
+│                                                                 │
+│               OPORTUNIDADE COMERCIAL                            │
+│    Receita real · Urgência real · Ação antes do concorrente     │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -249,7 +249,7 @@ Antes da arquitetura técnica, o fluxo de inteligência:
 │    FONTES INTERNAS     │     │    FONTES EXTERNAS      │
 │                        │     │                         │
 │  PostgreSQL            │     │  NOAA ENSO API          │
-│  Supabase (15 tabelas) │────▶│  Open-Meteo GPS         │
+│  Supabase (15 tabelas) │────▶│  Open-Meteo GPS        │
 │  Histórico Comercial   │     │  AwesomeAPI / BCB       │
 │  Carteira de Clientes  │     │  INMET · CPTEC          │
 │  Catálogo de Insumos   │     │                         │
@@ -267,14 +267,14 @@ Antes da arquitetura técnica, o fluxo de inteligência:
            ┌──────────────────────────────────┐
            │     SUBAGENTES ESPECIALIZADOS    │
            │  ├─ Monitor Climático            │
-           │  ├─ El Niño / ENSO              │
-           │  ├─ Câmbio e Insumos            │
-           │  ├─ Analista Documental         │
-           │  └─ Inteligência Comercial      │
+           │  ├─ El Niño / ENSO               │
+           │  ├─ Câmbio e Insumos             │
+           │  ├─ Analista Documental          │
+           │  └─ Inteligência Comercial       │
            └──────────────┬───────────────────┘
                           ↓
      ┌──────────────────────────────────────────────┐
-     │               ENGINE DE DECISÃO             │
+     │               ENGINE DE DECISÃO              │
      │  ✓ Recomendação acionável por cliente       │
      │  ✓ Priorização por urgência e impacto       │
      │  ✓ Rastreabilidade de cada decisão          │
@@ -350,15 +350,15 @@ Interface web completa com dashboards em tempo real, cobrindo todos os times da 
 │             WF01 — ENTRADA + MONITOR PROATIVO (133 nós)                  │
 │  REATIVO:  WhatsApp → Evolution API → Normalizador Universal → WF02      │
 │            └─ Texto · Áudio (Whisper) · Imagem (Vision) · PDF (Extract)  │
-│                                                                           │
-│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                    │
-│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo 5 regiões  │
+│                                                                          │
+│  PROATIVO: Schedule 8h → 7 fontes simultâneas → WF02                     │
+│            └─ PostgreSQL · Supabase · NOAA ENSO · Open-Meteo 5 regiões   │
 │               AwesomeAPI/BCB · Score climático · Multiplicador El Niño   │
 └───────────────────────────────┬──────────────────────────────────────────┘
                                 │
 ┌───────────────────────────────▼──────────────────────────────────────────┐
 │             WF02 — CONSOLE MULTI-AGENTES (31 nós)                        │
-│                                                                           │
+│                                                                          │
 │  Agente Roteador (GPT-4.1-mini · Postgres Chat Memory · Think Tool × 2)  │
 │  ├── agente_monitor_climatico     → Open-Meteo GPS · 5 regiões           │
 │  ├── agente_elnino_monitor        → NOAA ENSO · impacto por região       │
@@ -366,7 +366,7 @@ Interface web completa com dashboards em tempo real, cobrindo todos os times da 
 │  ├── agente_analista_documental   → score 0–40pts · SLA tracking         │
 │  ├── agente_monitoramento_autonomo → score composto 0–100                │
 │  ├── agente_inteligencia_comercial → 4 tipos de oportunidade             │
-│  ├── Google Calendar × 3 tools   → alertas automáticos                  │
+│  ├── Google Calendar × 3 tools   → alertas automáticos                   │
 │  └── encaminhar_responsavel_humano → WF03                                │
 └──────────┬──────────────┬───────────────┬───────────────┬────────────────┘
            │              │               │               │
